@@ -19,6 +19,7 @@ export const renderSignUpModal = function() {
     modalCloseButton.setAttribute("class", "delete");
     modalCloseButton.setAttribute("aria-label", "close");
     modalCloseButton.setAttribute("id", "close");
+    modalCloseButton.addEventListener("click", handleCloseButton);
 
     let modalFormSection = document.createElement("section");
     modalFormSection.setAttribute("class", "modal-card-body");
@@ -77,15 +78,20 @@ export const buildSignUpForm = function() {
     return nameField;
 }
 
+export const handleCloseButton = function() {
+    console.log("booty");
+    let modal = document.getElementsByClassName("is-active")[0];
+    modal.setAttribute("class", "modal");
+}
 $('#signUp').on("click", function() {
     console.log("hey");
     let modal = renderSignUpModal();
     modal.setAttribute("class", "modal is-active");
     $(":root").append(modal);
 });
-
+/*
 $("#close").on("click", function() {
     console.log("hey again");
     let modal = document.getElementsByClassName("is-active")[0];
     modal.setAttribute("class", "modal");
-});
+});*/
