@@ -83,6 +83,7 @@ export const handleCloseButton = function() {
     let modal = document.getElementsByClassName("is-active")[0];
     modal.setAttribute("class", "modal");
 }
+
 $('#signUp').on("click", function() {
     console.log("hey");
     let modal = renderSignUpModal();
