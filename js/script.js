@@ -12,8 +12,8 @@ export const renderSignUpModal = function() {
     modalHeader.setAttribute("class", "modal-card-head");
 
     let modalTitle = document.createElement("p");
-    modalTitle.setAttribute("class", "modal-card-title");
-    modalTitle.textContent = "Sign Up";
+    modalTitle.setAttribute("class", "modal-card-title is-family-sans-serif");
+    modalTitle.innerHTML = "Sign Up";
 
     let modalCloseButton = document.createElement("button");
     modalCloseButton.setAttribute("class", "delete");
@@ -55,11 +55,14 @@ export const renderSignUpModal = function() {
 }
 
 export const buildSignUpForm = function() {
+    let formContainer = document.createElement("div");
+    formContainer.setAttribute("class", "container");
+
     let nameField = document.createElement("div");
     nameField.setAttribute("class", "field");
 
     let nameLabel = document.createElement("label");
-    nameLabel.setAttribute("class", "label");
+    nameLabel.setAttribute("class", "label is-family-sans-serif");
     nameLabel.textContent = "Name";
 
     let nameControl = document.createElement("div");
@@ -75,7 +78,40 @@ export const buildSignUpForm = function() {
     
     nameControl.appendChild(nameInput);
 
-    return nameField;
+    let userField = document.createElement("div");
+    userField.setAttribute("class", "field");
+
+    let userLabel = document.createElement("label");
+    userLabel.setAttribute("class", "label is-family-sans-serif");
+    userLabel.innerHTML = "Username";
+
+    let userControl = document.createElement("div");
+    userControl.setAttribute("class", "control has-icons-left");
+
+    let userInput = document.createElement("input");
+    userInput.setAttribute("class", "input");
+    userInput.setAttribute("type", "text");
+    userInput.setAttribute("placeholder", "Username");
+
+    let userIconSpan = document.createElement("span");
+    userIconSpan.setAttribute("class", "icon is-small is-left");
+
+    let userIconImage = document.createElement("i");
+    userIconImage.setAttribute("class", "fab fa-user");
+
+    userField.appendChild(userLabel);
+    userField.appendChild(userControl);
+
+    userControl.appendChild(userInput);
+    userControl.appendChild(userIconSpan);
+
+    userIconSpan.appendChild(userIconImage);
+
+    formContainer.appendChild(nameField);
+    formContainer.appendChild(userField);
+    
+
+    return formContainer;
 }
 
 export const handleCloseButton = function() {
