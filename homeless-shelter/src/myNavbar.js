@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+    Button,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -26,7 +27,7 @@ const Example = (props) => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/about/">Components</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
@@ -48,6 +49,10 @@ const Example = (props) => {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
+              <NavItem id="login">
+                <Button color="primary">primary</Button>{' '}
+                <Button color="secondary">secondary</Button>{' '}
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
