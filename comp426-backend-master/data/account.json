@@ -1,2 +1,18 @@
 {
+  "users": {
+    "test": {
+      "passwordHash": "$2a$10$dadscJsh2jB1f4AJWX4ClOC1kg38KJ7hNqZg2hix81wwL.as3utAy",
+      "data": {
+        "phone": "phoneNum",
+        "address": "123 Durham"
+      }
+    },
+    "booty": {
+      "passwordHash": "$2a$10$H/jKQEz280HDHldpopWbY.lk8cVryBgIjaWJeivue95WV8YeMo6mi",
+      "data": {
+        "phone": "phoneNum",
+        "address": "123 Durham"
+      }
+    }
+  }
 }

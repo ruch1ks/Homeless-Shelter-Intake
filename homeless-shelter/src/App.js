@@ -1,10 +1,8 @@
 import React from 'react';
 import './bulma.css';
 import './pictures/angel.png';
-import About from './about/About.js';
 import axios from 'axios';
-import { BrowserRouter as Link } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 class App extends React.Component {
   constructor() {
@@ -12,8 +10,11 @@ class App extends React.Component {
     this.state = {
       redirect: false
     }
-    axios.post('http:localhost:3000/account.create', {
-      "name": "test",
+    const pubRoot = new axios.create({
+      baseURL: "http://localhost:3000/account"
+    });
+    /*pubRoot.post('/create/', {
+      "name": "booty",
       "pass": "pass123",
       "data": {
         "phone": "phoneNum",
@@ -24,30 +25,12 @@ class App extends React.Component {
     })
     .catch(function (error) {
       console.log(error);
-    });
-  }
-
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    });
-  }
-
-  renderRedirect = () => {
-    if(this.state.redirect) {
-      return(
-        <Switch>
-          <Route><About /></Route>
-        </Switch>
-      );
-    }
+    });*/
   }
 
   render() {
     return(
-    <Router>
       <div className="App">
-      {this.renderRedirect()}
       <section className="hero is-primary">
         <div className="hero-body">
         <div className="container">
@@ -121,7 +104,6 @@ class App extends React.Component {
     </div>
     </section>
     </div>
-    </Router>
   );
     }
 }
