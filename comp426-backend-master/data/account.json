@@ -13,6 +13,15 @@
         "phone": "phoneNum",
         "address": "123 Durham"
       }
+    },
+    "abcde": {
+      "passwordHash": "$2a$10$bew30zSSve/PMTKe8fvvzu/yNXkM0WT1.osHXbU/VldjNXS8oJMba",
+      "data": {
+        "shelterName": "Test",
+        "phone": "(123) 456-7890",
+        "address": "111 Test Road",
+        "description": "I am a test account"
+      }
     }
   }
 }
