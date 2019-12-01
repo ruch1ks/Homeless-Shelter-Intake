@@ -11,17 +11,32 @@ class ShelterList extends React.Component {
         }
     }
 
-    componentDidMount() {
-        let data = [];
+    async componentDidMount() {
+        let response = [];
         let result = [];
 
         result.push(<div>test</div>);
         
-        getPubAccs().then((value => {
-            data.push(value);
-        }))
+        await getPubAccs().then((value) => {
+            for(const shelter in value) {
+                response.push(value[shelter]);
+            }
+        });
 
-        console.log(data.length);
+        for(let i = 0; i < response.length; i++) {           
+            result.push(<div>
+                <Card>
+                    <CardBody>
+                        <CardTitle><h3>{response[i][0].shelter}</h3></CardTitle>
+                        <CardText>
+                            <p>Address: {response[i][0].address}</p>
+                            <p>Phone: {response[i][0].phone}</p>
+                            <p>About: {response[i][0].about}</p>
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </div>)
+        }
         this.setState({
             data : result
         });
