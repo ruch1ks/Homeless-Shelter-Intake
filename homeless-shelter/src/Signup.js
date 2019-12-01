@@ -1,6 +1,7 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import {accToPublic} from "./backend/pubBackend.js";
 import {createAccount} from "./backend/backend.js";
 import './Signup.css';
 
@@ -34,9 +35,14 @@ class Signup extends React.Component {
         });
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         event.preventDefault();
-        createAccount(this.state);
+        if(this.pass != this.confirmed) {
+            alert("Your passwords do not match");
+        } else {
+            await createAccount(this.state);
+            await accToPublic(this.state);
+        }
     }
 
     render() {

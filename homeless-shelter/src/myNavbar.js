@@ -27,7 +27,7 @@ const myNavbar = (props) => {
                 <NavLink href="/about/">About Us</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="/all/">All Shelters</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>

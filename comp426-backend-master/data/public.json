@@ -1,2 +1,24 @@
 {
+  "shelters": {
+    "Test 1": [
+      {
+        "shelter": "Test 1",
+        "phone": "(123) 456-7890",
+        "address": "123 Test1 Road",
+        "description": "This is test 1",
+        "donations": [],
+        "pledges": []
+      }
+    ],
+    "Shelter 1": [
+      {
+        "shelter": "Shelter 1",
+        "phone": "(123) 123-1233",
+        "address": "123 shelter road",
+        "description": "This is another test",
+        "donations": [],
+        "pledges": []
+      }
+    ]
+  }
 }

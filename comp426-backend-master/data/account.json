@@ -22,6 +22,33 @@
         "address": "111 Test Road",
         "description": "I am a test account"
       }
+    },
+    "hiiii": {
+      "passwordHash": "$2a$10$nCEMGIHrcmADMk5zi8.V1uL..qB4PjAI0wmtQHkjNQc9VYMsKiq4.",
+      "data": {
+        "shelterName": "Testtest",
+        "phone": "123123123",
+        "address": "123123",
+        "description": "i am a test"
+      }
+    },
+    "aaa": {
+      "passwordHash": "$2a$10$gqrszv/S/ktSW22cvLKvw./OuzlrTgrTYoq/fb3yE3zmZ48stEuLm",
+      "data": {
+        "shelterName": "aaa",
+        "phone": "aaaaaaaaa",
+        "address": "aaaaaa",
+        "description": "test 3"
+      }
+    },
+    "shelter1": {
+      "passwordHash": "$2a$10$kuJdTP5TIeMLXy2GU3swb.pDn8OQjF5/0CBATpGMO2VTpdYlQ.5ba",
+      "data": {
+        "shelterName": "Shelter 1",
+        "phone": "(123) 123-1233",
+        "address": "123 shelter road",
+        "description": "This is another test"
+      }
     }
   }
 }

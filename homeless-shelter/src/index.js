@@ -6,6 +6,7 @@ import App from './App';
 import About from './About';
 import Login from './Login';
 import Signup from './Signup';
+import ShelterList from './ShelterList';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 
@@ -18,6 +19,7 @@ const routing = (
         <Route path="/about" component={About} />
         <Route path = "/login" component={Login} />
         <Route path = "/signup" component={Signup} />
+        <Route path = "/all" component={ShelterList} />
       </div>
     </Router>
   )
