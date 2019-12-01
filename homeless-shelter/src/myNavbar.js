@@ -49,12 +49,14 @@ const Example = (props) => {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <NavItem id="login">
-                <Button color="primary">primary</Button>{' '}
-                <Button color="secondary">secondary</Button>{' '}
-              </NavItem>
             </Nav>
           </Collapse>
+          <Nav>
+            <NavItem className="float-right">
+                <Button color="primary">primary</Button>{' '}
+                <Button color="secondary">secondary</Button>{' '}
+            </NavItem>
+          </Nav>
         </Navbar>
       </div>
     );
