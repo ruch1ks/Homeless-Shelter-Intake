@@ -1,6 +1,6 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
-import {getPubAccs} from './backend/pubBackend.js';
+import {getPubAccs, addingDonations, testGet, delPubAcc} from './backend/pubBackend.js';
 import {Card, CardBody, CardTitle, CardText, Button} from 'reactstrap';
 import "./ShelterList.css";
 
@@ -9,9 +9,13 @@ class ShelterList extends React.Component {
         super();
 
         this.state = {
-            data : []
+            data : [],
+            makingPledge : false
         }
 
+        let test = ['Shoes'];
+        testGet("test2");
+        //addingDonations("test", test);
         this.handlePledge = this.handlePledge.bind(this);
     }
 
@@ -30,6 +34,7 @@ class ShelterList extends React.Component {
             }
         });
 
+        console.log(response);
         for(let i = 0; i < response.length; i++) {    
             for(let j = 0; j < response[i][0].donations.length; j++) {
                 donationList.push(<li>{response[i][0].donations[j]}</li>)
@@ -51,7 +56,7 @@ class ShelterList extends React.Component {
                                 <CardBody>
                                     <CardTitle><h5>Pledges</h5></CardTitle>
                                     <CardText><ul>{pledgeList}</ul></CardText>
-                                    <Button id={response[i][0].shelter + "pledge"} color="primary" onClick={this.handlePledge}>Pledge Now!</Button>
+                                    {this.state.makingPledge ? null : <Button id={response[i][0].shelter + "pledge"} color="primary" onClick={this.handlePledge}>Pledge Now!</Button>}
                                 </CardBody>
                             </Card>
                         </CardText>

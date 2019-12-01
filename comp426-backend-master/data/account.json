@@ -49,6 +49,24 @@
         "address": "123 shelter road",
         "description": "This is another test"
       }
+    },
+    "test1": {
+      "passwordHash": "$2a$10$ySem1YhoG50G/xXh/RYXQO7ir6XkFXqY70DVCImxDznXi3Isgr1iq",
+      "data": {
+        "shelterName": "test",
+        "phone": "test",
+        "address": "test",
+        "description": "test"
+      }
+    },
+    "test2": {
+      "passwordHash": "$2a$10$25v4//e15bCw2Ah.1wn48uj0RlJN2RqIZhriufY4GkpQqfLiSi2Fm",
+      "data": {
+        "shelterName": "test2",
+        "phone": "test2",
+        "address": "test2",
+        "description": "test2"
+      }
     }
   }
 }

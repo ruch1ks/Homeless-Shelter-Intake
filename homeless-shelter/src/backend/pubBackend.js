@@ -48,3 +48,25 @@ export const delPubAcc = async function() {
         console.log(error);
       });
 }
+
+export const testGet = async function(name) {
+    await pubRoot.get('/shelters/' + name)
+    .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}
+export const addingDonations = async function(name, donations) {
+    await pubRoot.post('/shelters/' + name + '/donations/', {
+        data : donations,
+        type : "merge"
+    })
+    .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}

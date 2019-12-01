@@ -53,7 +53,7 @@ class Signup extends React.Component {
                     <Form>
                         <FormGroup>
                             <Label for="username">Username</Label>
-                            <Input type="email" onChange={this.handleChange} name="Username" id="username" placeholder="Username"></Input>
+                            <Input type="text" onChange={this.handleChange} name="Username" id="username" placeholder="Username"></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label for="password">Password</Label>
@@ -65,15 +65,15 @@ class Signup extends React.Component {
                         </FormGroup>
                         <FormGroup>
                             <Label for="name">Shelter Name</Label>
-                            <Input type="email" onChange={this.handleChange} name="Name" id="name" placeholder="Shelter Name"></Input>
+                            <Input type="text" onChange={this.handleChange} name="Name" id="name" placeholder="Shelter Name"></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label for="address">Address</Label>
-                            <Input type="email" onChange={this.handleChange} name="Address" id="address" placeholder="ex. 123 Shelter Rd."></Input>
+                            <Input type="text" onChange={this.handleChange} name="Address" id="address" placeholder="ex. 123 Shelter Rd."></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label for="phone">Phone Number</Label>
-                            <Input type="email" onChange={this.handleChange} name="Phone" id="phone" placeholder="ex. (123) 456-7890"></Input>
+                            <Input type="text" onChange={this.handleChange} name="Phone" id="phone" placeholder="ex. (123) 456-7890"></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label for="description">Description</Label>
