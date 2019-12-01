@@ -1,7 +1,9 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
 import {getPubAccs} from './backend/pubBackend.js';
-import {Card, CardBody, CardTitle, CardText} from 'reactstrap';
+import {Card, CardBody, CardTitle, CardText, Button} from 'reactstrap';
+import "./ShelterList.css";
+
 class ShelterList extends React.Component {
     constructor() {
         super();
@@ -9,13 +11,18 @@ class ShelterList extends React.Component {
         this.state = {
             data : []
         }
+
+        this.handlePledge = this.handlePledge.bind(this);
     }
 
+    handlePledge(event) {
+        console.log(event.target.id);
+    }
     async componentDidMount() {
         let response = [];
         let result = [];
-
-        result.push(<div>test</div>);
+        let donationList = [];
+        let pledgeList = [];
         
         await getPubAccs().then((value) => {
             for(const shelter in value) {
@@ -23,7 +30,13 @@ class ShelterList extends React.Component {
             }
         });
 
-        for(let i = 0; i < response.length; i++) {           
+        for(let i = 0; i < response.length; i++) {    
+            for(let j = 0; j < response[i][0].donations.length; j++) {
+                donationList.push(<li>{response[i][0].donations[j]}</li>)
+            }       
+            for(let j = 0; j < response[i][0].donations.length; j++) {
+                pledgeList.push(<li>{response[i][0].donations[j]}</li>)
+            }
             result.push(<div>
                 <Card>
                     <CardBody>
@@ -32,6 +45,15 @@ class ShelterList extends React.Component {
                             <p>Address: {response[i][0].address}</p>
                             <p>Phone: {response[i][0].phone}</p>
                             <p>About: {response[i][0].about}</p>
+                            <h6>Most Needed Donations:</h6>
+                            <ul>{donationList}</ul>
+                            <Card>
+                                <CardBody>
+                                    <CardTitle><h5>Pledges</h5></CardTitle>
+                                    <CardText><ul>{pledgeList}</ul></CardText>
+                                    <Button id={response[i][0].shelter + "pledge"} color="primary" onClick={this.handlePledge}>Pledge Now!</Button>
+                                </CardBody>
+                            </Card>
                         </CardText>
                     </CardBody>
                 </Card>
@@ -47,8 +69,9 @@ class ShelterList extends React.Component {
         return(
             <div>
                 <MyNavbar />
-                <h1>All Shelters</h1>
+                <div id="allShelters">
                 {this.state.data}
+                </div>
             </div>
         );
     }
