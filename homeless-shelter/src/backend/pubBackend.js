@@ -5,18 +5,16 @@ const pubRoot = new axios.create({
   });
 
 export const accToPublic = async function(state) {
-    await pubRoot.post('/shelters/' + state.name, {
+    await pubRoot.post('/shelters/' + state.name + "/", {
       data: { 
         "shelter": state.name,
         "phone": state.phone,
         "address": state.address,
         "description": state.description,
         "donations": [],
-        "pledges": []
+        "pledges": {}
       },
-      type: "merge"
-    
-}).then(function (response) {
+    }).then(function (response) {
     console.log(response);
   })
   .catch(function (error) {
@@ -40,7 +38,7 @@ export const getPubAccs = async function() {
 
 //not sure where this will be useful
 export const delPubAcc = async function() {
-    await pubRoot.delete('/shelters/test')
+    await pubRoot.delete('/shelters/shelter1')
     .then(function (response) {
         console.log(response);
       })
@@ -49,8 +47,8 @@ export const delPubAcc = async function() {
       });
 }
 
-export const testGet = async function(name) {
-    await pubRoot.get('/shelters/' + name)
+export const getShelter = async function(name) {
+    await pubRoot.get('/shelters/' + name )
     .then(function (response) {
         console.log(response);
       })
@@ -69,4 +67,21 @@ export const addingDonations = async function(name, donations) {
       .catch(function (error) {
         console.log(error);
       });
+}
+
+export const addingPledges = async function(shelter, nameStr, messageStr, pledgeArr) {
+    await pubRoot.post('/shelters/' + shelter + '/pledges/', {
+      data : {
+        name : nameStr,
+        message : messageStr,
+        pledge: pledgeArr
+      },
+      type : "merge"
+    })
+    .then(function (response) {
+    console.log(response);
+    })
+    .catch(function (error) {
+    console.log(error);
+    });
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
-import {getPubAccs, addingDonations, testGet, delPubAcc} from './backend/pubBackend.js';
-import {Card, CardBody, CardTitle, CardText, Button} from 'reactstrap';
+import {getPubAccs, addingPledges, getShelter, delPubAcc} from './backend/pubBackend.js';
+import {Card, CardBody, CardTitle, CardText, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
 import "./ShelterList.css";
 
 class ShelterList extends React.Component {
@@ -9,56 +10,156 @@ class ShelterList extends React.Component {
         super();
 
         this.state = {
+            currShelter: '',
+            makingPledge : false,
             data : [],
-            makingPledge : false
+            response : [],
+            pledges : [],
+            name : '',
+            message: ''
         }
 
-        let test = ['Shoes'];
-        testGet("test2");
-        //addingDonations("test", test);
         this.handlePledge = this.handlePledge.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleSubmit.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+
+    }
+
+    //for registering changes to message and name
+    handleChange(event) {
+        let id = event.target.id;
+
+        this.setState({
+            name: (id == "name") ? event.target.value : this.state.name,
+            message: (id == "message") ? event.target.value : this.state.message, 
+        });
+    }
+
+    //for registering multiple select
+    handleSelect(event) {
+        let arr = event.target.options;
+        let temp = [];
+
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].selected) {
+                temp.push(arr[i].value);
+            }
+        }
+
+        this.setState({
+            pledges : temp
+        });
     }
 
     handlePledge(event) {
-        console.log(event.target.id);
-    }
-    async componentDidMount() {
-        let response = [];
-        let result = [];
-        let donationList = [];
-        let pledgeList = [];
-        
-        await getPubAccs().then((value) => {
-            for(const shelter in value) {
-                response.push(value[shelter]);
-            }
+        let result = this.state.data;
+
+        let id = event.target.id.substring(9);
+        this.setState({
+            makingPledge : true,
+            currShelter : id
         });
 
-        console.log(response);
-        for(let i = 0; i < response.length; i++) {    
-            for(let j = 0; j < response[i][0].donations.length; j++) {
-                donationList.push(<li>{response[i][0].donations[j]}</li>)
-            }       
-            for(let j = 0; j < response[i][0].donations.length; j++) {
-                pledgeList.push(<li>{response[i][0].donations[j]}</li>)
+        for(let i = 0; i < this.state.data.length; i++) {
+            if(this.state.data[i].key == id) {
+                result[i] = <div>
+                    <Card>
+                      <CardBody>
+                      <div>
+                      <Form>
+                        <FormGroup>
+                          <Label for="name">Name</Label>
+                          <Input type="text" onChange={this.handleChange} name="name" id="name" placeholder="Name (optional)"></Input>
+                        </FormGroup>  
+                        <FormGroup>
+                          <Label for="message">Message</Label>
+                          <Input type="text" onChange={this.handleChange} name="message" id="message" placeholder="Message (optional)"></Input>
+                        </FormGroup> 
+                        <FormGroup>
+                          <Label for="select">Pledge Items (Press Ctrl+Click to select multiple items)</Label>
+                          <Input onChange={this.handleSelect} type="select" name="select" id="select" multiple>
+                              <option>Toiletries</option>
+                              <option>Clothing</option>
+                              <option>Canned Goods</option>
+                              <option>Undergarments</option>
+                          </Input>
+                        </FormGroup>
+                        <Button onClick={this.handleSubmit} color="primary">Submit Pledge</Button> 
+                        <Button onClick={this.handleCancel}>Cancel</Button>  
+                      </Form>
+                      </div>          
+                      </CardBody>
+                    </Card>
+                  </div>
             }
-            result.push(<div>
+        }
+    }
+
+    //handling submission of pledges
+    async handleSubmit(event) {
+        if(this.state.pledges.length != 0) {
+            let name = this.state.name.length == 0 ? '' : this.state.name;
+            let message = this.state.message.length == 0 ? '' : this.state.message;
+
+            console.log(this.state.currShelter);
+            await addingPledges(this.state.currShelter, name, message, this.state.pledges);
+        }
+
+        this.setState({
+            makingPledge : false,
+            currShelter : ''
+        })
+        this.renderShelters();
+    }
+
+    handleCancel(event) {
+        this.setState({
+            makingPledge : false,
+            currShelter : ''
+        })
+        this.renderShelters();
+    }
+
+    renderShelters() {
+        let response = this.state.response;
+        let result = [];
+
+        for(let i = 0; i < response.length; i++) {
+            let donationList = [];
+            let pledgeList = [];    
+
+            for(let j = 0; j < response[i].donations.length; j++) {
+                donationList.push(<li>{response[i].donations[j]}</li>)
+            }       
+            for(let j = 0; j < response[i].pledges.length; j++) {
+
+                let items = [];
+                for(let k = 0; k < response[i].pledges[j].pledge.length; k++) {
+                    items.push(<li>{response[i].pledges[j].pledge[k]}</li>);
+                }
+                let name = response[i].pledges[j].name.length == 0 ? "Anonymous" : response[i].pledges[j].name;
+                pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
+            }
+            result.push(<div key={response[i].shelter}>
                 <Card>
                     <CardBody>
-                        <CardTitle><h3>{response[i][0].shelter}</h3></CardTitle>
+                        <CardTitle><h3>{response[i].shelter}</h3></CardTitle>
                         <CardText>
-                            <p>Address: {response[i][0].address}</p>
-                            <p>Phone: {response[i][0].phone}</p>
-                            <p>About: {response[i][0].about}</p>
+                            <p>Address: {response[i].address}</p>
+                            <p>Phone: {response[i].phone}</p>
+                            <p>About: {response[i].about}</p>
                             <h6>Most Needed Donations:</h6>
                             <ul>{donationList}</ul>
                             <Card>
                                 <CardBody>
                                     <CardTitle><h5>Pledges</h5></CardTitle>
-                                    <CardText><ul>{pledgeList}</ul></CardText>
-                                    {this.state.makingPledge ? null : <Button id={response[i][0].shelter + "pledge"} color="primary" onClick={this.handlePledge}>Pledge Now!</Button>}
+                                    <CardText>{pledgeList.length == 0 ? <p>No pledges yet, add yours below!</p> : <ul>{pledgeList}</ul>}</CardText>
+                                    <Button id={"pledgeBtn" + response[i].shelter} color="primary" onClick={this.handlePledge}>Pledge Now!</Button>
                                 </CardBody>
                             </Card>
+                            <div id={response[i].shelter + "pledge"}></div>
                         </CardText>
                     </CardBody>
                 </Card>
@@ -66,7 +167,23 @@ class ShelterList extends React.Component {
         }
         this.setState({
             data : result
+        })
+    }
+
+    async componentDidMount() {
+        let res = [];
+
+        await getPubAccs().then((value) => {
+            for(const shelter in value) {
+                res.push(value[shelter]);
+            }
         });
+
+        this.setState({
+            response : res
+        })
+
+        this.renderShelters();
     } 
 
     render() {
