@@ -1,2 +1,48 @@
 {
+  "shelters": {
+    "Test 1": {
+      "donations": [
+        "Socks",
+        "Toothpaste",
+        "Canned goods",
+        "Shoes"
+      ]
+    },
+    "Shelter 1": [
+      {
+        "shelter": "Shelter 1",
+        "phone": "(123) 123-1233",
+        "address": "123 shelter road",
+        "description": "This is another test",
+        "donations": [],
+        "pledges": []
+      }
+    ],
+    "\\[object Object\\]": {
+      "donations": [
+        "Socks",
+        "Canned goods"
+      ]
+    },
+    "test2": [
+      {
+        "shelter": "test2",
+        "phone": "test2",
+        "address": "test2",
+        "description": "test2",
+        "donations": {},
+        "pledges": {}
+      }
+    ],
+    "test": [
+      {
+        "shelter": "test",
+        "phone": "test",
+        "address": "test",
+        "description": "test",
+        "donations": [],
+        "pledges": []
+      }
+    ]
+  }
 }

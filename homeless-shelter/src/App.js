@@ -8,28 +8,10 @@ import MyNavbar from './myNavbar.js';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      redirect: false
-    }
-    const pubRoot = new axios.create({
-      baseURL: "http://localhost:3000/account"
-    });
-    /*pubRoot.post('/create/', {
-      "name": "booty",
-      "pass": "pass123",
-      "data": {
-        "phone": "phoneNum",
-        "address": "123 Durham"
-      }
-    }).then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });*/
+   
  }
-  render() {
 
+  render() {
     return (<MyNavbar></MyNavbar>);
   }
 };

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import {
     Button,
     Collapse,
@@ -14,23 +15,19 @@ import {
     DropdownItem,
   } from 'reactstrap';
 
-const Example = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
+const myNavbar = (props) => {
   
-    const toggle = () => setIsOpen(!isOpen);
-  
+    
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
+          <NavbarBrand href="/">Home</NavbarBrand>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="/about/">Components</NavLink>
+                <NavLink href="/about/">About Us</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="/all/">All Shelters</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -49,17 +46,18 @@ const Example = (props) => {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
+              <NavItem id="login">
+                <Link to='/login'>
+                <Button color="primary">Login</Button>{' '}
+                </Link>
+                <Link to='/signup'>
+                <Button color="secondary">Sign Up</Button>{' '}
+                </Link>
+              </NavItem>
             </Nav>
-          </Collapse>
-          <Nav>
-            <NavItem className="float-right">
-                <Button color="primary">primary</Button>{' '}
-                <Button color="secondary">secondary</Button>{' '}
-            </NavItem>
-          </Nav>
         </Navbar>
       </div>
     );
   }
   
-  export default Example;
+  export default myNavbar;
