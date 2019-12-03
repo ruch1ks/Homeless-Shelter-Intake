@@ -45,13 +45,16 @@ class Dashboard extends React.Component {
                     </Card>
                     <Card className="card">
                         <CardBody>
-                            <CardTitle><h4>Number of Occupants</h4></CardTitle>
-                            <CardText><Button>Register New Member</Button></CardText>
+                            <CardTitle><h4>Locate Us</h4></CardTitle>
+                            <iframe width="525" height="300" frameborder="0"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_ZOlJblaoiNo202aVhKRaoy9uVduIdbA&q=Durham+Rescue+Mission,Durham+NC" allowfullscreen>>
+                            </iframe>
                         </CardBody>
                     </Card>
                     <Card className="card">
                         <CardBody>
-                            <CardText>Google Maps API?</CardText>
+                            <CardTitle><h4>Number of Occupants</h4></CardTitle>
+                            <CardText><Button>Register New Member</Button></CardText>
                         </CardBody>
                     </Card>
                     <Card className="card">
