@@ -31,8 +31,8 @@ class Dashboard extends React.Component {
                     <h5>Not a registered shelter yet? <a href="../signup">Sign up</a> today!</h5>
                     </div> 
                     : 
-                    <div>
-                    <Card>
+                    <div id="dash">
+                    <Card className="card">
                         <CardBody>
                             <CardImg></CardImg>
                             <CardTitle><h4>Name</h4></CardTitle>
@@ -43,24 +43,24 @@ class Dashboard extends React.Component {
                             </CardText>
                         </CardBody>
                     </Card>
-                    <Card>
+                    <Card className="card">
                         <CardBody>
                             <CardTitle><h4>Number of Occupants</h4></CardTitle>
                             <CardText><Button>Register New Member</Button></CardText>
                         </CardBody>
                     </Card>
-                    <Card>
+                    <Card className="card">
                         <CardBody>
                             <CardText>Google Maps API?</CardText>
                         </CardBody>
                     </Card>
-                    <Card>
+                    <Card className="card">
                         <CardBody>
                             <CardTitle><h4>Most Needed Donations</h4></CardTitle>
                             <CardText>Put donations here</CardText>
                         </CardBody>
                     </Card>
-                    <Card>
+                    <Card className="card">
                         <CardBody>
                             <CardTitle><h4>Current Pledges</h4></CardTitle>
                             <CardText>Put pledges here</CardText>
