@@ -1,0 +1,11 @@
+#notLoggedIn {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    text-align: center;
+}
+
+#emptyCard {
+    padding: 10% 10% 10% 10%;
+
+}

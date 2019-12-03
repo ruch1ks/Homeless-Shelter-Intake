@@ -14,6 +14,7 @@ export const login = async function(state) {
         console.log(localStorage.getItem("jwt"));
     })
     .catch(function (error) {
+        console.log(error.response.data.msg);
         return error.response.data.msg;
     });
 };

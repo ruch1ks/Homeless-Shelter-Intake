@@ -1,6 +1,6 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
-import {getPubAccs, addingPledges, getShelter, delPubAcc} from './backend/pubBackend.js';
+import {getPubAccs, addingPledges} from './backend/pubBackend.js';
 import {Card, CardBody, CardTitle, CardText, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 import "./ShelterList.css";
@@ -9,6 +9,7 @@ class ShelterList extends React.Component {
     constructor() {
         super();
 
+        console.log(localStorage.getItem("jwt"));
         this.state = {
             currShelter: '',
             makingPledge : false,

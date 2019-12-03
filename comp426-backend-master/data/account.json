@@ -114,6 +114,15 @@
         "address": "aa",
         "description": "aa"
       }
+    },
+    "shelter2": {
+      "passwordHash": "$2a$10$7v7Yf8Hy68by0T3H8qinSen8O8rDIJYBl7AYr13/tinA02/b7BfDW",
+      "data": {
+        "shelterName": "shelter 2",
+        "phone": "shelter 2",
+        "address": "shetler 2",
+        "description": "shelter 2"
+      }
     }
   }
 }

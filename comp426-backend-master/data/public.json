@@ -60,6 +60,15 @@
           ]
         }
       ]
+    },
+    "shelter 2": {
+      "user": "shelter2",
+      "shelter": "shelter 2",
+      "phone": "shelter 2",
+      "address": "shetler 2",
+      "description": "shelter 2",
+      "donations": [],
+      "pledges": {}
     }
   }
 }

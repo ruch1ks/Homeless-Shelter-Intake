@@ -29,6 +29,9 @@ const myNavbar = (props) => {
               <NavItem>
                 <NavLink href="/all/">All Shelters</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/dashboard/">Dashboard</NavLink>
+              </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
@@ -53,6 +56,11 @@ const myNavbar = (props) => {
                 <Link to='/signup'>
                 <Button color="secondary">Sign Up</Button>{' '}
                 </Link>
+              </NavItem>
+              <NavItem>
+               <div>
+                 <p>{localStorage.getItem("jwt") != null ? "Logged in as" : null}</p>
+                </div>
               </NavItem>
             </Nav>
         </Navbar>

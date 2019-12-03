@@ -9,7 +9,7 @@ class Login extends React.Component {
         super(props);
 
         this.state = {
-            login: '',
+            user: '',
             pass: ''
         }
         this.handleChange = this.handleChange.bind(this);
@@ -19,7 +19,7 @@ class Login extends React.Component {
     handleChange(event) {
         let id = event.target.id;
         this.setState({
-            login: (id == "username") ? event.target.value : this.state.login,
+            user: (id == "username") ? event.target.value : this.state.user,
             pass: (id == "password") ? event.target.value : this.state.pass
         });
     }

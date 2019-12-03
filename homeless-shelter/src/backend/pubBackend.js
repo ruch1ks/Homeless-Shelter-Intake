@@ -7,6 +7,7 @@ const pubRoot = new axios.create({
 export const accToPublic = async function(state) {
     await pubRoot.post('/shelters/' + state.name + "/", {
       data: { 
+        "user" : state.user,
         "shelter": state.name,
         "phone": state.phone,
         "address": state.address,
