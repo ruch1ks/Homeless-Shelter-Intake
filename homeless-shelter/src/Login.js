@@ -1,7 +1,7 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import {login} from "./backend/login.js";
+import {login} from "./backend/accBackend.js";
 import "./Login.css";
 
 class Login extends React.Component {
@@ -9,7 +9,7 @@ class Login extends React.Component {
         super(props);
 
         this.state = {
-            user: '',
+            login: '',
             pass: ''
         }
         this.handleChange = this.handleChange.bind(this);
@@ -19,13 +19,14 @@ class Login extends React.Component {
     handleChange(event) {
         let id = event.target.id;
         this.setState({
-            user: (id == "username") ? event.target.value : this.state.user,
+            login: (id == "username") ? event.target.value : this.state.login,
             pass: (id == "password") ? event.target.value : this.state.pass
         });
     }
 
     async handleSubmit(event) {
         event.preventDefault();
+        console.log(this.state);
         let response = await login(this.state);
         console.log(await response);
     };

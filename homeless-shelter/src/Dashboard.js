@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
                     </div> 
                     : 
                     <div id="dash">
-                    <Card className="card">
+                    <Card id="infoCard">
                         <CardBody>
                             <CardImg></CardImg>
                             <CardTitle><h4>Name</h4></CardTitle>
@@ -43,7 +43,7 @@ class Dashboard extends React.Component {
                             </CardText>
                         </CardBody>
                     </Card>
-                    <Card className="card">
+                    <Card id="mapCard">
                         <CardBody>
                             <CardTitle><h4>Locate Us</h4></CardTitle>
                             <iframe width="525" height="300" frameborder="0"
@@ -51,19 +51,22 @@ class Dashboard extends React.Component {
                             </iframe>
                         </CardBody>
                     </Card>
-                    <Card className="card">
+                    <Card id="memberCard">
                         <CardBody>
                             <CardTitle><h4>Number of Occupants</h4></CardTitle>
-                            <CardText><Button>Register New Member</Button></CardText>
+                            <CardText>
+                                <Button id="register" color="primary"><a href='../registerMember'>Register New Member</a></Button>
+                                <Button color="info"><a href='../allMembers'>See All Members</a></Button>
+                            </CardText>
                         </CardBody>
                     </Card>
-                    <Card className="card">
+                    <Card id="donationCard">
                         <CardBody>
                             <CardTitle><h4>Most Needed Donations</h4></CardTitle>
                             <CardText>Put donations here</CardText>
                         </CardBody>
                     </Card>
-                    <Card className="card">
+                    <Card id="pledgeCard">
                         <CardBody>
                             <CardTitle><h4>Current Pledges</h4></CardTitle>
                             <CardText>Put pledges here</CardText>

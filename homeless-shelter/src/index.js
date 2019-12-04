@@ -8,6 +8,8 @@ import Login from './Login';
 import Signup from './Signup';
 import Dashboard from './Dashboard';
 import ShelterList from './ShelterList';
+import RegisterMember from './RegisterMember';
+import AllMembers from './AllMembers';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 
@@ -22,6 +24,9 @@ const routing = (
         <Route path = "/signup" component={Signup} />
         <Route path = "/all" component={ShelterList} />
         <Route path = "/dashboard" component={Dashboard} />
+        <Route path = "/registerMember" component={RegisterMember} />
+        <Route path = "/allMembers" component={AllMembers} />
+
       </div>
     </Router>
   )

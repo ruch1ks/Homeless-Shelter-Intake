@@ -2,7 +2,7 @@ import React from 'react';
 import MyNavbar from './myNavbar.js';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import {accToPublic} from "./backend/pubBackend.js";
-import {createAccount} from "./backend/backend.js";
+import {createAccount} from "./backend/accBackend.js";
 import './Signup.css';
 
 class Signup extends React.Component {
@@ -73,7 +73,7 @@ class Signup extends React.Component {
                         </FormGroup>
                         <FormGroup>
                             <Label for="phone">Phone Number</Label>
-                            <Input type="text" onChange={this.handleChange} name="Phone" id="phone" placeholder="ex. (123) 456-7890"></Input>
+                            <Input type="number" onChange={this.handleChange} name="Phone" id="phone" placeholder="ex. 123-456-7890"></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label for="description">Description</Label>

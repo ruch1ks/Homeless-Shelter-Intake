@@ -17,7 +17,6 @@ import {
 
 const myNavbar = (props) => {
   
-    
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -50,9 +49,15 @@ const myNavbar = (props) => {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem id="login">
+                {localStorage.getItem("jwt") == null ?
                 <Link to='/login'>
-                <Button color="primary">Login</Button>{' '}
+                  <Button color="primary">Login</Button>
                 </Link>
+                :
+                <Link to='/'>
+                  <Button color="info">Log out</Button>
+                </Link>
+                }
                 <Link to='/signup'>
                 <Button color="secondary">Sign Up</Button>{' '}
                 </Link>

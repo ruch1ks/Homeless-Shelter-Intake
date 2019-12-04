@@ -7,11 +7,44 @@
 
 #emptyCard {
     padding: 10% 10% 10% 10%;
-
 }
 
-.card{
+#infoCard {
     width: 45%;
-    margin: 2%;
+    margin: 1%;
     float: left;
 }
+#mapCard {
+    width: 45%;
+    margin: 1%;
+    float: left;
+}
+#memberCard {
+    width: 45%;
+    margin: 1%;
+    float: left;
+}
+#donationCard {
+    width: 45%;
+    margin: 1%;
+    float: left;
+}
+#pledgeCard {
+    width: 45%;
+    margin: 1%;
+    float: left;
+}
+
+button a, button a:hover {
+    color: white;
+}
+
+#register {
+    margin-right: 1%;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+}
+

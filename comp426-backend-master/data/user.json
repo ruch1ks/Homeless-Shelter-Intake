@@ -1,2 +1,32 @@
 {
+  "1": {
+    "members": {
+      "0": {
+        "id": "0",
+        "first": "Jack",
+        "last": "Sparrow",
+        "birthday": "1975-09-07",
+        "age": "44",
+        "entry": "2018-04-22",
+        "donationsNeeded": [
+          "Undergarments",
+          "Socks",
+          "Gift Cards (for chain stores)"
+        ]
+      },
+      "\\-1": {
+        "id": -1,
+        "first": "Jane",
+        "last": "Doe",
+        "birthday": "1985-02-22",
+        "age": "34",
+        "entry": "2019-12-01",
+        "donationsNeeded": [
+          "Bottled Water",
+          "Undergarments",
+          "Socks"
+        ]
+      }
+    }
+  }
 }
