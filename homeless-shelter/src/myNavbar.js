@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {getAccount} from "./backend/accBackend.js";
 import {
     Button,
     Collapse,
@@ -18,12 +19,21 @@ import {
 class myNavbar extends React.Component {
     constructor() {
       super();
-
+      this.state = {
+        name: ""
+      }
       this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
       localStorage.removeItem("jwt");
+    }
+
+    async componentDidMount() {
+      let response = await getAccount();
+      if(localStorage.getItem("jwt") != null) {
+        this.setState({name: response.data.user.name});
+      }
     }
 
     render() {
@@ -76,7 +86,7 @@ class myNavbar extends React.Component {
                 </NavItem>
                 <NavItem>
                 <div>
-                  <p>{localStorage.getItem("jwt") != null ? "Logged in as" : null}</p>
+                  <p>{localStorage.getItem("jwt") != null ? "Logged in as \n" + this.state.name : ""}</p>
                 </div>
                 </NavItem>
               </Nav>
