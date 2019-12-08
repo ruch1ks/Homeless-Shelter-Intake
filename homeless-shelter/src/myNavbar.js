@@ -58,26 +58,28 @@ class myNavbar extends React.Component {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <NavItem id="login">
-                {localStorage.getItem("jwt") == null ?
-                <Link to='/login'>
-                  <Button color="primary">Login</Button>
-                </Link>
-                :
-                <Link to='/'>
-                  <Button onClick={this.handleClick} color="info">Log out</Button>
-                </Link>
-                }
-                <Link to='/signup'>
-                <Button color="secondary">Sign Up</Button>{' '}
-                </Link>
-              </NavItem>
-              <NavItem>
-               <div>
-                 <p>{localStorage.getItem("jwt") != null ? "Logged in as" : null}</p>
+              </Nav>
+              <Nav className="float-right">
+                <NavItem id="login">
+                  {localStorage.getItem("jwt") == null ?
+                  <Link to='/login'>
+                    <Button color="primary">Login</Button>
+                  </Link>
+                  :
+                  <Link to='/'>
+                    <Button onClick={this.handleClick} color="info">Log out</Button>
+                  </Link>
+                  }
+                  <Link to='/signup'>
+                  <Button color="secondary">Sign Up</Button>{' '}
+                  </Link>
+                </NavItem>
+                <NavItem>
+                <div>
+                  <p>{localStorage.getItem("jwt") != null ? "Logged in as" : null}</p>
                 </div>
-              </NavItem>
-            </Nav>
+                </NavItem>
+              </Nav>
         </Navbar>
       </div>
     );
