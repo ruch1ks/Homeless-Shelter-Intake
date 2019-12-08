@@ -1,6 +1,7 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
 import {Card, CardBody, CardText, CardTitle, CardImg, Button} from 'reactstrap';
+import {getAccount} from './backend/accBackend.js';
 import './Dashboard.css';
 
 class Dashboard extends React.Component {
@@ -10,9 +11,15 @@ class Dashboard extends React.Component {
         this.state = {
             loggedIn : localStorage.getItem("jwt") == null ? true : false
         }
+
+        this.accountDetails();
+
     }
 
-    componentDidMount() {
+    async accountDetails() {
+        let response = await getAccount();
+
+        console.log(response);
 
     }
 

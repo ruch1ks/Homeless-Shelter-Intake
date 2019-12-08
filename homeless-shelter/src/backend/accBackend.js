@@ -21,7 +21,7 @@ const accRoot = new axios.create({
 
 export const createAccount = async function(state) {
     await accRoot.post('/create/', {
-    "name": state.user,
+    "name": state.login,
     "pass": state.pass,
     "data": {
       "shelterName": state.name,
@@ -33,6 +33,20 @@ export const createAccount = async function(state) {
     console.log(response);
   })
   .catch(function (error) {
+    console.log(error.response.data.msg);
+    return error.response.data.msg;
+  });
+}
+
+export const getAccount = async function() {
+  await accRoot.get('/status', {
+    headers: { Authorization : `Bearer ${localStorage.getItem("jwt")}`}
+  }).then(function (response) {
+    console.log(response);
+    return response;
+  })
+  .catch(function (error) {
     console.log(error);
+    return error;
   });
 }

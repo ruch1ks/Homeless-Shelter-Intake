@@ -11,6 +11,8 @@ export const accToPublic = async function(state) {
         "shelter": state.name,
         "phone": state.phone,
         "address": state.address,
+        "city" : state.city,
+        "state" : state.usState,
         "description": state.description,
         "donations": [],
         "pledges": {}

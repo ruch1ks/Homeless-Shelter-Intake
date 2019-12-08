@@ -69,6 +69,66 @@
       "description": "shelter 2",
       "donations": [],
       "pledges": {}
+    },
+    "Shelter Abc": {
+      "shelter": "Shelter Abc",
+      "phone": "",
+      "address": "123 Shelter Rd",
+      "city": "Cary",
+      "state": "NC",
+      "description": "This is a test",
+      "donations": [],
+      "pledges": {}
+    },
+    "Anc": {
+      "shelter": "Anc",
+      "phone": "",
+      "address": "123 Shelter Rd",
+      "city": "Cary",
+      "state": "NC",
+      "description": "This is a test",
+      "donations": [],
+      "pledges": {}
+    },
+    "Shelter bb ": {
+      "shelter": "Shelter bb ",
+      "phone": "",
+      "address": "444 Shelter Rd",
+      "city": "Raleigh",
+      "state": "NC",
+      "description": "Test message",
+      "donations": [],
+      "pledges": {}
+    },
+    "Shelter z": {
+      "shelter": "Shelter z",
+      "phone": "",
+      "address": "123 Shelter Rd",
+      "city": "Cary",
+      "state": "NC",
+      "description": "Test message",
+      "donations": [],
+      "pledges": {}
+    },
+    "Shelter zzz": {
+      "shelter": "Shelter zzz",
+      "phone": "",
+      "address": "111 Shelter Rd",
+      "city": "Durham",
+      "state": "CA",
+      "description": "Test message",
+      "donations": [],
+      "pledges": {}
+    },
+    "Shelter A": {
+      "shelter": "Shelter A",
+      "phone": "",
+      "address": "444 Shelter Rd. ",
+      "city": "Raleigh",
+      "state": "NC",
+      "description": "Test message",
+      "donations": [],
+      "pledges": {}
     }
   }
 }

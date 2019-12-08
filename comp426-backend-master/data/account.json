@@ -123,6 +123,51 @@
         "address": "shetler 2",
         "description": "shelter 2"
       }
+    },
+    "abc": {
+      "passwordHash": "$2a$10$s7vh9Ckmvy9a6NfG1aG17eD9XWwGwoC4ar2MKookPb8ksJXU4GLBS",
+      "data": {
+        "shelterName": "Shelter Abc",
+        "phone": "",
+        "address": "123 Shelter Rd",
+        "description": "This is a test"
+      }
+    },
+    "bb": {
+      "passwordHash": "$2a$10$jkELaPU6TEMv8VvVANsmSOSnJg/6iGgWoRi9fzHuE/N.DshOof9MK",
+      "data": {
+        "shelterName": "Shelter bb ",
+        "phone": "",
+        "address": "444 Shelter Rd",
+        "description": "Test message"
+      }
+    },
+    "zz": {
+      "passwordHash": "$2a$10$AbWAULMRfMKe4ai/CnUzjuxh2GFJxKOkDQkYKlDF/dwKwNLutPdOa",
+      "data": {
+        "shelterName": "Shelter z",
+        "phone": "",
+        "address": "123 Shelter Rd",
+        "description": "Test message"
+      }
+    },
+    "zzz": {
+      "passwordHash": "$2a$10$2A2vVbitblqgFz9wW4TCsOxJq3jy2BC.B77Iz2z2H7Km9zdj/FRsC",
+      "data": {
+        "shelterName": "Shelter zzz",
+        "phone": "",
+        "address": "111 Shelter Rd",
+        "description": "Test message"
+      }
+    },
+    "testa": {
+      "passwordHash": "$2a$10$5c3o8rO8sF.3CsuSqL0TGe52viaRbVWaF.QXHwRYemKeK.ob9iOgG",
+      "data": {
+        "shelterName": "Shelter A",
+        "phone": "",
+        "address": "444 Shelter Rd. ",
+        "description": "Test message"
+      }
     }
   }
 }

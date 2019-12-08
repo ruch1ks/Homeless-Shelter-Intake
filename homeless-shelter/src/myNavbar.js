@@ -15,8 +15,12 @@ import {
     DropdownItem,
   } from 'reactstrap';
 
+const handleClick = function() {
+  console.log("trying");
+}
+
 const myNavbar = (props) => {
-  
+
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -55,7 +59,7 @@ const myNavbar = (props) => {
                 </Link>
                 :
                 <Link to='/'>
-                  <Button color="info">Log out</Button>
+                  <Button onClick={() => handleClick} color="info">Log out</Button>
                 </Link>
                 }
                 <Link to='/signup'>

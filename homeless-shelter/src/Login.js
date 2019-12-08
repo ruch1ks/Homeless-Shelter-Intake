@@ -26,9 +26,9 @@ class Login extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
-        let response = await login(this.state);
-        console.log(await response);
+        await login(this.state);
+        window.location = '/dashboard/';
+
     };
             
 
