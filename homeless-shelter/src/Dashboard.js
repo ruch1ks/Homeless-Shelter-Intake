@@ -9,7 +9,11 @@ class Dashboard extends React.Component {
         super();
 
         this.state = {
-            loggedIn : localStorage.getItem("jwt") == null ? true : false
+            loggedIn : localStorage.getItem("jwt") == null ? true : false,
+            name : '',
+            phone : '',
+            address : '',
+            description: ''
         }
 
         this.accountDetails();
@@ -17,7 +21,13 @@ class Dashboard extends React.Component {
 
     async accountDetails() {
         let response = await getAccount();
-        console.log(response);
+        console.log(response.data.user.data);
+        this.setState({
+            name: response.data.user.data.shelterName,
+            phone: response.data.user.data.phone,
+            address: response.data.user.data.address,
+            description: response.data.user.data.description,
+        })
 
     }
 
@@ -40,11 +50,11 @@ class Dashboard extends React.Component {
                     <Card id="infoCard">
                         <CardBody>
                             <CardImg></CardImg>
-                            <CardTitle><h4>Name</h4></CardTitle>
+                            <CardTitle><h4>{this.state.name}</h4></CardTitle>
                             <CardText>
-                                <p>Address: </p>
-                                <p>Phone Number: </p>
-                                <p>About us: </p>
+                                <p><strong>Address:</strong> {this.state.address}</p>
+                                <p><strong>Phone Number:</strong> {this.state.phone}</p>
+                                <p><strong>About us:</strong> {this.state.description}</p>
                             </CardText>
                         </CardBody>
                     </Card>
@@ -71,12 +81,7 @@ class Dashboard extends React.Component {
                             <CardText>Put donations here</CardText>
                         </CardBody>
                     </Card>
-                    <Card id="pledgeCard">
-                        <CardBody>
-                            <CardTitle><h4>Current Pledges</h4></CardTitle>
-                            <CardText>Put pledges here</CardText>
-                        </CardBody>
-                    </Card>
+                    
                     </div>}
             </div>
         )

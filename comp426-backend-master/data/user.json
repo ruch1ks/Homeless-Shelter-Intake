@@ -43,6 +43,19 @@
           "Socks",
           "Gift Cards (for chain stores)"
         ]
+      },
+      "2": {
+        "id": "2",
+        "first": "John",
+        "last": "John",
+        "birthday": "1964-03-04",
+        "age": "45",
+        "entry": "2014-02-03",
+        "donationsNeeded": [
+          "Sleeping Bags",
+          "Warm Clothing (coats, gloves, scarves, etc)",
+          "Reading Glasses"
+        ]
       }
     }
   }
