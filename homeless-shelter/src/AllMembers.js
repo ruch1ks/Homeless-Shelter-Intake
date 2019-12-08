@@ -1,10 +1,21 @@
 import React from 'react';
 import {Card, CardBody, CardText} from 'reactstrap';
+import {getAllMembers} from './backend/userBackend.js';
 import MyNavbar from './myNavbar.js';
 
 class AllMembers extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+            members : []
+        }
+        
+    }
+
+    async componentDidMount() {
+        let response = await getAllMembers();
+        console.log(response);
     }
 
     render() {

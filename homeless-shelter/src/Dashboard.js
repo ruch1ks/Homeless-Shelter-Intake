@@ -13,12 +13,10 @@ class Dashboard extends React.Component {
         }
 
         this.accountDetails();
-
     }
 
     async accountDetails() {
         let response = await getAccount();
-
         console.log(response);
 
     }
