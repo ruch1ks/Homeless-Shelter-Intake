@@ -15,12 +15,18 @@ import {
     DropdownItem,
   } from 'reactstrap';
 
-const handleClick = function() {
-  console.log("trying");
-}
+class myNavbar extends React.Component {
+    constructor() {
+      super();
 
-const myNavbar = (props) => {
+      this.handleClick = this.handleClick.bind(this);
+    }
 
+    handleClick() {
+      localStorage.removeItem("jwt");
+    }
+
+    render() {
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -59,7 +65,7 @@ const myNavbar = (props) => {
                 </Link>
                 :
                 <Link to='/'>
-                  <Button onClick={() => handleClick} color="info">Log out</Button>
+                  <Button onClick={this.handleClick} color="info">Log out</Button>
                 </Link>
                 }
                 <Link to='/signup'>
@@ -75,6 +81,7 @@ const myNavbar = (props) => {
         </Navbar>
       </div>
     );
+    }
   }
   
   export default myNavbar;
