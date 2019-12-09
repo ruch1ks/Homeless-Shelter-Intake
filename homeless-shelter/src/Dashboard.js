@@ -2,6 +2,7 @@ import React from 'react';
 import MyNavbar from './myNavbar.js';
 import {Card, CardBody, CardText, CardTitle, CardImg, Button} from 'reactstrap';
 import {getAccount} from './backend/accBackend.js';
+import {calculateDonations} from './backend/userBackend.js';
 import './Dashboard.css';
 
 class Dashboard extends React.Component {
@@ -13,20 +14,26 @@ class Dashboard extends React.Component {
             name : '',
             phone : '',
             address : '',
-            description: ''
+            description: '',
+            donationsNeeded: []
         }
-
-        this.accountDetails();
     }
 
-    async accountDetails() {
+    async componentDidMount() {
         let response = await getAccount();
-        console.log(response.data.user.data);
+
+        let donations = [];
+        let items = await calculateDonations();
+        for(let i = 0; i < items.length; i++) {
+            donations.push(<li>{items[i]}</li>);
+        }
+
         this.setState({
             name: response.data.user.data.shelterName,
             phone: response.data.user.data.phone,
             address: response.data.user.data.address,
             description: response.data.user.data.description,
+            donationsNeeded: donations
         })
 
     }
@@ -78,7 +85,13 @@ class Dashboard extends React.Component {
                     <Card id="donationCard">
                         <CardBody>
                             <CardTitle><h4>Most Needed Donations</h4></CardTitle>
-                            <CardText>Put donations here</CardText>
+                            <CardText>
+                                <div>
+                                    <ul>
+                                        {this.state.donationsNeeded}
+                                    </ul>
+                                </div>
+                            </CardText>
                         </CardBody>
                     </Card>
                     

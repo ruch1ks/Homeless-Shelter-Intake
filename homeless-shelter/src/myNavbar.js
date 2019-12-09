@@ -70,10 +70,13 @@ class myNavbar extends React.Component {
               </UncontrolledDropdown>
               </Nav>
               <Nav className="float-right">
+                <div>
+                  <p>{localStorage.getItem("jwt") != null ? "Logged in as: " + this.state.name + "  ": ""}</p>
+                </div>
                 <NavItem id="login">
                   {localStorage.getItem("jwt") == null ?
                   <Link to='/login'>
-                    <Button color="primary">Login</Button>
+                    <Button id="login" color="primary">Login</Button>
                   </Link>
                   :
                   <Link to='/'>
@@ -85,9 +88,6 @@ class myNavbar extends React.Component {
                   </Link>
                 </NavItem>
                 <NavItem>
-                <div>
-                  <p>{localStorage.getItem("jwt") != null ? "Logged in as \n" + this.state.name : ""}</p>
-                </div>
                 </NavItem>
               </Nav>
         </Navbar>

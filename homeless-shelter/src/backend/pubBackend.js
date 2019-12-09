@@ -62,7 +62,6 @@ export const getShelter = async function(name) {
 export const addingDonations = async function(name, donations) {
     await pubRoot.post('/shelters/' + name + '/donations/', {
         data : donations,
-        type : "merge"
     })
     .then(function (response) {
         console.log(response);

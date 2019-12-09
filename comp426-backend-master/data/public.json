@@ -27,13 +27,6 @@
           "pledge": [
             "Undergarments"
           ]
-        },
-        {
-          "name": "",
-          "message": "",
-          "pledge": [
-            "Clothing"
-          ]
         }
       ]
     },
@@ -114,7 +107,13 @@
       "city": "Cary",
       "state": "NC",
       "description": "Test message",
-      "donations": [],
+      "donations": [
+        "Bottled Water",
+        "Undergarments",
+        "Socks",
+        "Gift Cards (for chain stores)",
+        "Sleeping Bags"
+      ],
       "pledges": {}
     },
     "Shelter zzz": {

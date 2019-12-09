@@ -47,7 +47,6 @@ class RegisterMember extends React.Component {
             localStorage.setItem("currId", currId);
         }
 
-        console.log("local is now " + localStorage.getItem("currId"));
         let temp = localStorage.getItem("currId");
         this.setState({
             id : temp
@@ -57,6 +56,7 @@ class RegisterMember extends React.Component {
             if(this.state.id != -1) registerMember(this.state);
         }, 500);
 
+        setTimeout(callback => {window.location = '/allMembers'}, 500);
     }
 
     //for registering multiple select

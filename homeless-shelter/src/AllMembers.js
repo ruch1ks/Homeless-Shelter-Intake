@@ -1,6 +1,6 @@
 import React from 'react';
-import {Card, CardTitle, CardBody, CardText} from 'reactstrap';
-import {getAllMembers} from './backend/userBackend.js';
+import {Card, Button, CardBody, CardText} from 'reactstrap';
+import {getAllMembers, deleteMember, calculateDonations} from './backend/userBackend.js';
 import MyNavbar from './myNavbar.js';
 import './AllMembers.css';
 
@@ -11,13 +11,23 @@ class AllMembers extends React.Component {
         this.state = {
             members : []
         }
-        
+
+        this.handleUnregister = this.handleUnregister.bind(this);
+    }
+
+    async handleUnregister(event) {
+        let id = event.target.id;
+        await deleteMember(id);
+        await calculateDonations();
+        //refresh the page
+        setTimeout(callback => {
+            window.location = '/allMembers'
+        }, 500);
     }
 
     async componentDidMount() {
         let memberArr = [];
         let response = await getAllMembers();
-        console.log(response.data.result);
 
         for(let obj in response.data.result) {
             let member = response.data.result[obj];
@@ -31,6 +41,7 @@ class AllMembers extends React.Component {
                             <p><strong>DOB:</strong> {member.birthday}</p>
                             <p><strong>Date of Entry:</strong> {member.entry}</p>
                         </CardText>
+                        <Button id={obj} onClick={this.handleUnregister} color="danger">Delete from Records</Button>
                     </CardBody>
                 </Card>
             )
