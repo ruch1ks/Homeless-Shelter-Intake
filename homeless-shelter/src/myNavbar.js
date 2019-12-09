@@ -51,6 +51,9 @@ class myNavbar extends React.Component {
               <NavItem>
                 <NavLink href="/dashboard/">Dashboard</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/feed/">Shelter Feed</NavLink>
+              </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options

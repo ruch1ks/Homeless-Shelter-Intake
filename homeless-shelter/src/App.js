@@ -1,6 +1,5 @@
 import React from 'react';
 
-import axios from 'axios';
 import MyNavbar from './myNavbar.js';
 
 
@@ -12,7 +11,14 @@ class App extends React.Component {
  }
 
   render() {
-    return (<MyNavbar></MyNavbar>);
+    return (
+      <div>
+        <MyNavbar />
+        <div>
+          <h1>Guardian Angels</h1>
+          <p></p>
+        </div>
+      </div>);
   }
 };
   

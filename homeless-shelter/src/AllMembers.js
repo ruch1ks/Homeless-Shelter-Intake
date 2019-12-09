@@ -2,6 +2,7 @@ import React from 'react';
 import {Card, Button, CardBody, CardText} from 'reactstrap';
 import {getAllMembers, deleteMember, calculateDonations} from './backend/userBackend.js';
 import MyNavbar from './myNavbar.js';
+import Autocomplete from './Autocomplete.js';
 import './AllMembers.css';
 
 class AllMembers extends React.Component {
@@ -19,6 +20,7 @@ class AllMembers extends React.Component {
         let id = event.target.id;
         await deleteMember(id);
         await calculateDonations();
+
         //refresh the page
         setTimeout(callback => {
             window.location = '/allMembers'
@@ -45,7 +47,6 @@ class AllMembers extends React.Component {
                     </CardBody>
                 </Card>
             )
-            console.log(member);
         }
         this.setState({
             members: memberArr
@@ -68,7 +69,8 @@ class AllMembers extends React.Component {
                <h5>Not a registered shelter yet? <a href="../signup">Sign up</a> today!</h5>
                </div> 
                :
-               <div id="memberList"> 
+               <div id="memberList">
+                   <Autocomplete />
                    {this.state.members}
                </div>}
            </div> 

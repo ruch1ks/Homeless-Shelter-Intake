@@ -9,7 +9,6 @@ class ShelterList extends React.Component {
     constructor() {
         super();
 
-        console.log(localStorage.getItem("jwt"));
         this.state = {
             currShelter: '',
             makingPledge : false,
@@ -81,10 +80,17 @@ class ShelterList extends React.Component {
                         <FormGroup>
                           <Label for="select">Pledge Items (Press Ctrl+Click to select multiple items)</Label>
                           <Input onChange={this.handleSelect} type="select" name="select" id="select" multiple>
-                              <option>Toiletries</option>
-                              <option>Clothing</option>
-                              <option>Canned Goods</option>
-                              <option>Undergarments</option>
+                            <option>Bottled Water</option>
+                            <option>Undergarments</option>
+                            <option>Socks</option>
+                            <option>Gift Cards (for chain stores)</option>
+                            <option>Toothbrushes/Toothpaste</option>
+                            <option>Travel-Size Soap/Shampoo</option>
+                            <option>Combs/Hairbrushes</option>
+                            <option>Baby Care (wipes, diapers, baby food, etc)</option>
+                            <option>Sleeping Bags</option>
+                            <option>Warm Clothing (coats, gloves, scarves, etc)</option>
+                            <option>Reading Glasses</option>
                           </Input>
                         </FormGroup>
                         <Button onClick={this.handleSubmit} color="primary">Submit Pledge</Button> 
