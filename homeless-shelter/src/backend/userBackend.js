@@ -54,6 +54,9 @@ export const registerMember = function(state) {
 export const calculateDonations = async function() {
   //get members 
   let response = await getAllMembers();
+  if(response == undefined) {
+    return; 
+  }
   let map = {}; 
   for(var obj in response.data.result) {
     let item = response.data.result[obj];
@@ -88,6 +91,6 @@ export const calculateDonations = async function() {
 
   //post to public
   await addingDonations(name, result);
-  
+
   return result;
 }

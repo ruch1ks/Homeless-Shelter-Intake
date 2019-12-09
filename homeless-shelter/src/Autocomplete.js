@@ -20,7 +20,8 @@ class Autocomplete extends React.Component {
     }
 
     select(event) {
-        console.log(event.target.id);
+        localStorage.setItem("currMember", event.target.id);
+        window.location = '/unregisterMember';
     }
 
     handleChange(event) {
@@ -79,7 +80,7 @@ class Autocomplete extends React.Component {
         <div id="autocomplete">
           <Form>
             <FormGroup row>
-              <Label for="search"><h3>Search</h3></Label>
+              <Label for="search"><h4>Unregister Member: </h4></Label>
                 <Col>
                   <Input type="text" onChange={this.handleChange} value={this.state.userInput} id="search" />
                        <div>

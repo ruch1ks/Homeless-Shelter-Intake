@@ -43,7 +43,6 @@ class AllMembers extends React.Component {
                             <p><strong>DOB:</strong> {member.birthday}</p>
                             <p><strong>Date of Entry:</strong> {member.entry}</p>
                         </CardText>
-                        <Button id={obj} onClick={this.handleUnregister} color="danger">Delete from Records</Button>
                     </CardBody>
                 </Card>
             )
