@@ -15,12 +15,18 @@ class ShelterFeed extends React.Component {
     constructor() {
         super();
 
+        this.state = {
+            post : ''
+        }
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange() {
-
+    handleChange(event) {
+        this.setState({
+            post: event.target.value
+        });
     }
 
     handleSubmit() {

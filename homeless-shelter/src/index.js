@@ -7,6 +7,7 @@ import About from './About';
 import Login from './Login';
 import Signup from './Signup';
 import Dashboard from './Dashboard';
+import UnregisterMember from './UnregisterMember';
 import ShelterList from './ShelterList';
 import RegisterMember from './RegisterMember';
 import AllMembers from './AllMembers';
@@ -28,6 +29,7 @@ const routing = (
         <Route path = "/registerMember" component={RegisterMember} />
         <Route path = "/allMembers" component={AllMembers} />
         <Route path = "/feed" component={ShelterFeed} />
+        <Route path = "/unregisterMember" component={UnregisterMember} />
 
       </div>
     </Router>

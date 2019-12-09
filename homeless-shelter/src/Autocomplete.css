@@ -2,3 +2,14 @@
     margin-top: 3%;
     padding-left: 2%;
 }
+
+.suggestions {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 5px;
+}
+
+.suggestions:hover {
+    background-color: #68c2f2;
+}

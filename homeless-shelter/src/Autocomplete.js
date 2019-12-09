@@ -12,11 +12,15 @@ class Autocomplete extends React.Component {
             filteredSugg: [],
             showSugg: false,
             userInput: '',
-            names: []
+            names: [],
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.select = this.select.bind(this);
+    }
+
+    select(event) {
+        console.log(event.target.id);
     }
 
     handleChange(event) {
@@ -29,12 +33,30 @@ class Autocomplete extends React.Component {
             activeSugg: 0,
             filteredSugg: filtered,
             showSugg: true,
-            userInput: input
+            userInput: input,
+            suggList : []
         });
-    }
 
-    handleKeyDown() {
-
+        let suggestionsList = [];
+        if(this.state.showSugg && this.state.userInput.length > 0) {
+            if(this.state.filteredSugg.length > 0) {
+                suggestionsList.push(
+                    <div>
+                        {this.state.filteredSugg.map((suggestion, index) => {
+                            return (
+                            <div id={suggestion} onClick={this.select} className="suggestions" key={suggestion}>
+                                {suggestion}
+                            </div>
+                            );
+                        })
+                      }
+                    </div>              
+                );
+            }
+        }
+        this.setState({
+            suggList : suggestionsList
+        });
     }
 
     async componentDidMount() {
@@ -52,30 +74,17 @@ class Autocomplete extends React.Component {
     }
 
     render() {
-        let suggestionsList;
-        if(this.state.showSugg && this.state.userInput.length > 0) {
-            if(this.state.filteredSugg.length > 0) {
-                suggestionsList = (
-                    <ul>
-                        {this.state.filteredSugg.map((suggestion, index) => {
-                            return (
-                              <li key={suggestion}>
-                                  {suggestion}
-                              </li>  
-                            );
-                        })
-                      }
-                    </ul>
-                );
-            }
-        }
+
       return(
         <div id="autocomplete">
           <Form>
             <FormGroup row>
               <Label for="search"><h3>Search</h3></Label>
                 <Col>
-                  <Input type="text" onChange={this.handleChange} onKeyDown={this.handleKeyDown} value={this.state.userInput} id="search" />
+                  <Input type="text" onChange={this.handleChange} value={this.state.userInput} id="search" />
+                       <div>
+                       {this.state.suggList != undefined ? this.state.suggList[0] : null}
+                        </div>
                 </Col>
             </FormGroup>
           </Form>
