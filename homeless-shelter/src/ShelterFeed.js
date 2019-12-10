@@ -27,7 +27,9 @@ class ShelterFeed extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
 
+        if(localStorage.getItem("jwt") != null) {
         this.renderPosts();
+        }
     }
 
     async handleDelete(event) {
@@ -77,16 +79,19 @@ class ShelterFeed extends React.Component {
         return(
             <div>
                 <MyNavbar />
-                <div id="container">
-                {localStorage.getItem("jwt") == null ? 
                 <div>
-                    <Card>
+                {localStorage.getItem("jwt") == null ? 
+                <div id="notLoggedIn">
+                    <Card id="emptyCard">
                         <CardBody>
-                            <CardTitle><h3>You must be logged in to view this page</h3></CardTitle>
+                            <CardText><h3>You must be logged in to view the shelter feed</h3></CardText>
                         </CardBody>
                     </Card>
-                </div> : 
-                <div>
+                    <br />
+                    <h5>Are you a registered shelter? <a href="../login">Log in</a> to view your timeline</h5>
+                    <h5>Not a registered shelter yet? <a href="../signup">Sign up</a> today!</h5>
+                </div>  : 
+                <div id="container">
                     <Card>
                         <CardBody>
                             <CardTitle><h3>Post Your Announcement</h3></CardTitle>

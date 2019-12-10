@@ -47,6 +47,14 @@ class AllMembers extends React.Component {
                 </Card>
             )
         }
+
+        if(memberArr.length == 0) {
+            memberArr.push(<Card>
+                <CardBody>
+                    <CardText>You have no members currently registered</CardText>
+                </CardBody>
+            </Card>)
+        }
         this.setState({
             members: memberArr
         })

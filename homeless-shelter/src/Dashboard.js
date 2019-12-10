@@ -20,6 +20,7 @@ class Dashboard extends React.Component {
     }
 
     async componentDidMount() {
+        if(localStorage.getItem("jwt") == null) return; 
         let response = await getAccount();
 
         let donations = [];
@@ -28,6 +29,10 @@ class Dashboard extends React.Component {
             for(let i = 0; i < items.length; i++) {
                 donations.push(<li>{items[i]}</li>);
             }
+        }
+
+        if(donations.length == 0) {
+            donations.push(<p>You have no members currently registered</p>);
         }
 
         this.setState({

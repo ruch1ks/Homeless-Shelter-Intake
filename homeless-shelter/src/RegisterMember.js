@@ -38,7 +38,6 @@ class RegisterMember extends React.Component {
 
     async handleSubmit() {
         let currId = localStorage.getItem("currId");
-        console.log("currId is " + currId);
         if(currId == null) {
             localStorage.setItem("currId", 0);
         } else {
