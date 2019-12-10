@@ -16,12 +16,18 @@ class Autocomplete extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleChangeDebounce = this.handleChangeDebounce.bind(this);
         this.select = this.select.bind(this);
     }
 
     select(event) {
         localStorage.setItem("currMember", event.target.id);
         window.location = '/unregisterMember';
+    }
+
+    handleChangeDebounce(event) {
+        //implementing debouncing, only one call every second
+        setTimeout(this.handleChange(event), 1000);
     }
 
     handleChange(event) {
@@ -82,7 +88,7 @@ class Autocomplete extends React.Component {
             <FormGroup row>
               <Label for="search"><h4>Unregister Member: </h4></Label>
                 <Col>
-                  <Input type="text" onChange={this.handleChange} value={this.state.userInput} id="search" />
+                  <Input type="text" onChange={this.handleChangeDebounce} value={this.state.userInput} id="search" />
                        <div>
                        {this.state.suggList != undefined ? this.state.suggList[0] : null}
                         </div>

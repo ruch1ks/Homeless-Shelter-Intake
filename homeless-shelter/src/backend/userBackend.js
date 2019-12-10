@@ -20,7 +20,7 @@ export const getAllMembers = function() {
 
 export const deleteMember = function(id) {
   return userRoot.delete('./members/' + id, {
-    headers: { Authorization : `Bearer ${localStorage.getItem("jwt")}`}
+    headers: { Authorization : `Bearer ${localStorage.getItem("jwt")}` }
   }).then(function (response) {
     console.log(response);
     return response;

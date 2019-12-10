@@ -9,14 +9,16 @@ import {Card,
         Label, 
         Input, 
         Button } from 'reactstrap';
-
+import {getShelterName, getShelterId} from './backend/accBackend.js';
 
 class ShelterFeed extends React.Component {
     constructor() {
         super();
 
         this.state = {
-            post : ''
+            post : '',
+            shelterName : '',
+            shelterId : ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -31,6 +33,13 @@ class ShelterFeed extends React.Component {
 
     handleSubmit() {
 
+    }
+
+    async componentDidMount() {
+       this.setState({
+           shelterId : await getShelterId(),
+           shelterName : await getShelterName()
+       });
     }
 
     render() {

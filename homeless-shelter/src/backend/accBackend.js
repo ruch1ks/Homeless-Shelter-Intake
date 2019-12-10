@@ -50,3 +50,14 @@ export const getAccount = async function() {
     return error;
   });
 }
+
+export const getShelterName = async function() {
+  let response = await getAccount();
+  return response.data.user.data.shelterName;
+}
+
+export const getShelterId = async function() {
+  let response = await getAccount();
+  console.log(response.data.user.name)
+  return response.data.user.name;
+}
