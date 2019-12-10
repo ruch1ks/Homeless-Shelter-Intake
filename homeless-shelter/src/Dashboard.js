@@ -24,8 +24,10 @@ class Dashboard extends React.Component {
 
         let donations = [];
         let items = await calculateDonations();
-        for(let i = 0; i < items.length; i++) {
-            donations.push(<li>{items[i]}</li>);
+        if(items != undefined) {
+            for(let i = 0; i < items.length; i++) {
+                donations.push(<li>{items[i]}</li>);
+            }
         }
 
         this.setState({

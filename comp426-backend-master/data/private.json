@@ -1,2 +1,18 @@
 {
+  "posts": {
+    "3": [
+      {
+        "author": "Shelter z",
+        "id": "zz",
+        "post": "testing some more"
+      }
+    ],
+    "6": [
+      {
+        "author": "Shelter zzz",
+        "id": "zzz",
+        "post": "trying out the announcements!"
+      }
+    ]
+  }
 }

@@ -10,6 +10,7 @@ import {Card,
         Input, 
         Button } from 'reactstrap';
 import {getShelterName, getShelterId} from './backend/accBackend.js';
+import {makePost, getAllPosts, deletePost} from './backend/privBackend.js';
 
 class ShelterFeed extends React.Component {
     constructor() {
@@ -18,11 +19,20 @@ class ShelterFeed extends React.Component {
         this.state = {
             post : '',
             shelterName : '',
-            shelterId : ''
+            shelterId : '',
+            allPosts: []
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+
+        this.renderPosts();
+    }
+
+    async handleDelete(event) {
+        await deletePost(event.target.id);
+        this.renderPosts();
     }
 
     handleChange(event) {
@@ -31,15 +41,36 @@ class ShelterFeed extends React.Component {
         });
     }
 
-    handleSubmit() {
-
+    async handleSubmit(event) {
+        await makePost(this.state);
+        this.renderPosts();
     }
 
-    async componentDidMount() {
+    async renderPosts() {
        this.setState({
            shelterId : await getShelterId(),
            shelterName : await getShelterName()
        });
+       
+       let allPosts = await getAllPosts();
+       let postCards = [];
+       for(var obj in allPosts.data.result) {
+           let post = allPosts.data.result[obj][0];
+           postCards.push(
+               <Card>
+                <CardBody>
+                    <CardTitle><h5>{post.author}</h5></CardTitle>
+                    <CardText><p>{post.post}</p></CardText>
+                    {post.id == this.state.shelterId ? 
+                    <Button onClick={this.handleDelete} id={obj} color="danger">Delete Post</Button> : null}
+                </CardBody>  
+               </Card>
+           )
+       }
+
+       this.setState({
+           allPosts : postCards
+       })
     }
 
     render() {
@@ -65,11 +96,14 @@ class ShelterFeed extends React.Component {
                                         <Label for="post"></Label>
                                         <Input type="textarea" onChange={this.handleChange} name="post" id="post" placeholder="Communicate with other registered shelters"></Input>
                                     </FormGroup>
-                                    <Button color="primary">Post Announcement</Button>
+                                    <Button onClick={this.handleSubmit} color="primary">Post</Button>
                                 </Form>
                             </CardText>
                         </CardBody>
                     </Card>
+                    <div>
+                        {this.state.allPosts}
+                    </div>
                 </div>
                 }
                 </div>

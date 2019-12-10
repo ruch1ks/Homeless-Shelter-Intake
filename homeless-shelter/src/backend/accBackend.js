@@ -58,6 +58,5 @@ export const getShelterName = async function() {
 
 export const getShelterId = async function() {
   let response = await getAccount();
-  console.log(response.data.user.name)
   return response.data.user.name;
 }
