@@ -68,7 +68,25 @@
       "address": "shetler 2",
       "description": "shelter 2",
       "donations": [],
-      "pledges": {}
+      "pledges": [
+        {},
+        {
+          "name": "John",
+          "message": "happy holidays!",
+          "pledge": [
+            "Sleeping Bags",
+            "Warm Clothing (coats, gloves, scarves, etc)"
+          ]
+        },
+        {
+          "name": "Jake",
+          "message": "happy hanukkah!",
+          "pledge": [
+            "Socks",
+            "Toothbrushes/Toothpaste"
+          ]
+        }
+      ]
     },
     "Shelter Abc": {
       "shelter": "Shelter Abc",
@@ -78,7 +96,17 @@
       "state": "NC",
       "description": "This is a test",
       "donations": [],
-      "pledges": {}
+      "pledges": [
+        {},
+        {
+          "name": "",
+          "message": "Testing",
+          "pledge": [
+            "Bottled Water",
+            "Undergarments"
+          ]
+        }
+      ]
     },
     "Anc": {
       "shelter": "Anc",

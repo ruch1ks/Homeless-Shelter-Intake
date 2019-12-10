@@ -110,7 +110,6 @@ class ShelterList extends React.Component {
             let name = this.state.name.length == 0 ? '' : this.state.name;
             let message = this.state.message.length == 0 ? '' : this.state.message;
 
-            console.log(this.state.currShelter);
             await addingPledges(this.state.currShelter, name, message, this.state.pledges);
         }
 
@@ -118,6 +117,7 @@ class ShelterList extends React.Component {
             makingPledge : false,
             currShelter : ''
         })
+        
         this.renderShelters();
     }
 
@@ -143,11 +143,13 @@ class ShelterList extends React.Component {
             for(let j = 0; j < response[i].pledges.length; j++) {
 
                 let items = [];
+                if(response[i].pledges[j].pledge != undefined) {
                 for(let k = 0; k < response[i].pledges[j].pledge.length; k++) {
                     items.push(<li>{response[i].pledges[j].pledge[k]}</li>);
                 }
                 let name = response[i].pledges[j].name.length == 0 ? "Anonymous" : response[i].pledges[j].name;
                 pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
+            }
             }
             result.push(<div key={response[i].shelter}>
                 <Card>
