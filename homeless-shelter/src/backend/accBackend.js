@@ -5,17 +5,15 @@ const accRoot = new axios.create({
   });
 
   export const login = async function(state) {
-    await accRoot.post('/login', {
+    return await accRoot.post('/login', {
         "name": state.login,
         "pass": state.pass
     }).then(function (response) {
-        console.log(response);
         localStorage.setItem("jwt", response.data.jwt);
-        console.log(localStorage.getItem("jwt"));
+        return response
     })
     .catch(function (error) {
-        console.log(error.response.data.msg);
-        return error.response.data.msg;
+        return error;
     });
 };
 

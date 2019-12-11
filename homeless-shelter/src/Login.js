@@ -10,7 +10,8 @@ class Login extends React.Component {
 
         this.state = {
             login: '',
-            pass: ''
+            pass: '',
+            incorrect: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,9 +27,16 @@ class Login extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        await login(this.state);
-        window.location = '/dashboard/';
+        let response = await login(this.state);
 
+        //will be undefined on successful login
+        if(response.response == undefined) {
+            window.location = '/dashboard/';
+        } else {
+            this.setState({
+                incorrect : 'Incorrect username or password'
+            })
+        }
     };
             
 
@@ -47,6 +55,9 @@ class Login extends React.Component {
                         <FormGroup>
                             <Label for="password">Password</Label>
                             <Input type="password" onChange={this.handleChange} name="Password" id="password" placeholder="Password"></Input>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>{this.state.incorrect}</Label>
                         </FormGroup>
                         <Button onClick={this.handleSubmit}>Submit</Button>
                     </Form>
