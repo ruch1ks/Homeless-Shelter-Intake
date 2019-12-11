@@ -58,9 +58,6 @@ class myNavbar extends React.Component {
               </NavItem>
               </Nav>
               <Nav className="float-right">
-                <div>
-                  <p>{localStorage.getItem("jwt") != null ? "Logged in as: " + this.state.name + "  ": ""}</p>
-                </div>
                 <NavItem id="login">
                   {localStorage.getItem("jwt") == null ?
                   <Link to='/login'>
