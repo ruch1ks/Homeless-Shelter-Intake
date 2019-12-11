@@ -45,9 +45,6 @@ class myNavbar extends React.Component {
           </NavbarBrand>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink href="/about/">About Us</NavLink>
               </NavItem>
               <NavItem>

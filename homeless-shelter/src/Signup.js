@@ -6,7 +6,6 @@ import {createAccount} from "./backend/accBackend.js";
 import {login} from './backend/login.js';
 import './Signup.css';
 
-import {test} from './backend/mapsBackend.js';
 
 class Signup extends React.Component {
     constructor(props) {

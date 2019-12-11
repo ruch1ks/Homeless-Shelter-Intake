@@ -4,7 +4,6 @@ import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 import {editShelterData} from './backend/pubBackend.js';
 import './Signup.css';
 
-import {test} from './backend/mapsBackend.js';
 import { getAccount } from './backend/accBackend.js';
 
 class MyAccount extends React.Component {

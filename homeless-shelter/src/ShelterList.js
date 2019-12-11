@@ -151,7 +151,7 @@ class ShelterList extends React.Component {
                     }
                     let name = response[i].pledges[j].name.length == 0 ? "Anonymous" : response[i].pledges[j].name;
                     if(pledgeList.length < 5) {
-                    pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
+                        pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
                     }
                 }
             }
