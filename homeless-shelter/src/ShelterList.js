@@ -118,7 +118,7 @@ class ShelterList extends React.Component {
             currShelter : ''
         })
         
-        this.renderShelters();
+        setTimeout(this.renderShelters(), 1500);
     }
 
     handleCancel(event) {

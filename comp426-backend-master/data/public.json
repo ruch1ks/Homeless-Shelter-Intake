@@ -1,123 +1,5 @@
 {
   "shelters": {
-    "test": {
-      "shelter": "test",
-      "phone": "test",
-      "address": "test",
-      "description": "test",
-      "donations": [],
-      "pledges": [
-        {
-          "name": "",
-          "message": "",
-          "pledge": [
-            "Canned Goods"
-          ]
-        },
-        {
-          "name": "",
-          "message": "",
-          "pledge": [
-            "Canned Goods"
-          ]
-        },
-        {
-          "name": "",
-          "message": "",
-          "pledge": [
-            "Undergarments"
-          ]
-        }
-      ]
-    },
-    "shelter1": {
-      "shelter": "shelter1",
-      "phone": "aa",
-      "address": "aa",
-      "description": "aa",
-      "donations": [],
-      "pledges": [
-        {
-          "name": "",
-          "message": "",
-          "pledge": [
-            "Clothing",
-            "Canned Goods"
-          ]
-        },
-        {
-          "name": "",
-          "message": "",
-          "pledge": [
-            "Toiletries"
-          ]
-        },
-        {
-          "name": "",
-          "message": "",
-          "pledge": [
-            "Canned Goods"
-          ]
-        }
-      ]
-    },
-    "shelter 2": {
-      "user": "shelter2",
-      "shelter": "shelter 2",
-      "phone": "shelter 2",
-      "address": "shetler 2",
-      "description": "shelter 2",
-      "donations": [],
-      "pledges": [
-        {},
-        {
-          "name": "John",
-          "message": "happy holidays!",
-          "pledge": [
-            "Sleeping Bags",
-            "Warm Clothing (coats, gloves, scarves, etc)"
-          ]
-        },
-        {
-          "name": "Jake",
-          "message": "happy hanukkah!",
-          "pledge": [
-            "Socks",
-            "Toothbrushes/Toothpaste"
-          ]
-        }
-      ]
-    },
-    "Shelter Abc": {
-      "shelter": "Shelter Abc",
-      "phone": "",
-      "address": "123 Shelter Rd",
-      "city": "Cary",
-      "state": "NC",
-      "description": "This is a test",
-      "donations": [],
-      "pledges": [
-        {},
-        {
-          "name": "",
-          "message": "Testing",
-          "pledge": [
-            "Bottled Water",
-            "Undergarments"
-          ]
-        }
-      ]
-    },
-    "Anc": {
-      "shelter": "Anc",
-      "phone": "",
-      "address": "123 Shelter Rd",
-      "city": "Cary",
-      "state": "NC",
-      "description": "This is a test",
-      "donations": [],
-      "pledges": {}
-    },
     "Shelter bb ": {
       "shelter": "Shelter bb ",
       "phone": "",
@@ -125,8 +7,31 @@
       "city": "Raleigh",
       "state": "NC",
       "description": "Test message",
-      "donations": [],
-      "pledges": {}
+      "donations": [
+        "Undergarments",
+        "Bottled Water",
+        "Socks",
+        "Gift Cards (for chain stores)"
+      ],
+      "pledges": [
+        {},
+        {
+          "name": "Ruchi",
+          "message": "happy holidays!",
+          "pledge": [
+            "Bottled Water",
+            "Undergarments"
+          ]
+        },
+        {
+          "name": "",
+          "message": "",
+          "pledge": [
+            "Socks",
+            "Gift Cards (for chain stores)"
+          ]
+        }
+      ]
     },
     "Shelter z": {
       "shelter": "Shelter z",
@@ -150,7 +55,10 @@
       "city": "Durham",
       "state": "CA",
       "description": "Test message",
-      "donations": [],
+      "donations": [
+        "Bottled Water",
+        "Undergarments"
+      ],
       "pledges": {}
     },
     "Shelter A": {

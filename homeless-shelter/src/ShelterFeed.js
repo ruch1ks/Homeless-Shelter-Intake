@@ -45,7 +45,7 @@ class ShelterFeed extends React.Component {
 
     async handleSubmit(event) {
         await makePost(this.state);
-        this.renderPosts();
+        setTimeout(this.renderPosts(), 1000);
     }
 
     async renderPosts() {

@@ -41,7 +41,7 @@ export const getPubAccs = async function() {
 
 //not sure where this will be useful
 export const delPubAcc = async function() {
-    await pubRoot.delete('/shelters/shelter1')
+    await pubRoot.delete('/shelters/Shelter_bb')
     .then(function (response) {
         console.log(response);
       })

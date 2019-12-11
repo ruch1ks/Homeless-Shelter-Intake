@@ -3,7 +3,7 @@ import MyNavbar from './myNavbar.js';
 import {Card, CardBody, CardTitle} from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './RegisterMember.css';
-import {registerMember} from './backend/userBackend.js';
+import {registerMember, calculateDonations} from './backend/userBackend.js';
 class RegisterMember extends React.Component {
 
     constructor() {
@@ -51,8 +51,11 @@ class RegisterMember extends React.Component {
             id : temp
         });
 
-        setTimeout(callback => {
-            if(this.state.id != -1) registerMember(this.state);
+        setTimeout(async callback => {
+            if(this.state.id != -1) {
+                await registerMember(this.state);
+                await calculateDonations();
+            }
         }, 500);
 
         setTimeout(callback => {window.location = '/allMembers'}, 500);

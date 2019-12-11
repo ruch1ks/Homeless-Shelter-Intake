@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
                     </Card>
                     <Card id="memberCard">
                         <CardBody>
-                            <CardTitle><h4>Number of Occupants</h4></CardTitle>
+                            <CardTitle><h4>Manage Occupants</h4></CardTitle>
                             <CardText>
                                 <Button id="register" color="primary"><a href='../registerMember'>Register New Member</a></Button>
                                 <Button color="info"><a href='../allMembers'>See All Members</a></Button>
