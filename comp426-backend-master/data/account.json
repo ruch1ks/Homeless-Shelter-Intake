@@ -168,6 +168,17 @@
         "address": "444 Shelter Rd. ",
         "description": "Test message"
       }
+    },
+    "durhamrescue@gmail": {
+      "com": {
+        "passwordHash": "$2a$10$b6vDvwI5MDbecXec25ygJeszzMkwZkqeDSlqkCHjv.kZoqkBgE94G",
+        "data": {
+          "shelterName": "Durham Rescue Shelter",
+          "phone": "",
+          "address": "123 Shelter Road",
+          "description": "Durham Rescue Shelter. Serving the area since 2006."
+        }
+      }
     }
   }
 }

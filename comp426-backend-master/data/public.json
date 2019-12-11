@@ -46,7 +46,16 @@
         "Socks",
         "Sleeping Bags"
       ],
-      "pledges": {}
+      "pledges": [
+        {},
+        {
+          "name": "",
+          "message": "",
+          "pledge": [
+            "Bottled Water"
+          ]
+        }
+      ]
     },
     "Shelter zzz": {
       "shelter": "Shelter zzz",
@@ -76,6 +85,18 @@
     },
     "undefined": {
       "address": "hello"
+    },
+    "Durham Rescue Shelter": {
+      "shelter": "Durham Rescue Shelter",
+      "phone": "",
+      "address": "123 Shelter Road",
+      "city": "Durham",
+      "state": "NC",
+      "description": "Durham Rescue Shelter. Serving the area since 2006.",
+      "donations": [
+        "Bottled Water"
+      ],
+      "pledges": {}
     }
   }
 }
