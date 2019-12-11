@@ -140,13 +140,6 @@ class ShelterList extends React.Component {
                 for(let j = 0; j < response[i].donations.length; j++) {
                     donationList.push(<li>{response[i].donations[j]}</li>)
                 }
-<<<<<<< Updated upstream
-=======
-                let name = response[i].pledges[j].name.length == 0 ? "Anonymous" : response[i].pledges[j].name;
-                if(pledgeList.length < 5){
-                    pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
-                }
->>>>>>> Stashed changes
             }
             if(response[i].pledges)
                 for(let j = 0; j < response[i].pledges.length; j++) {
@@ -157,7 +150,9 @@ class ShelterList extends React.Component {
                         items.push(<li>{response[i].pledges[j].pledge[k]}</li>);
                     }
                     let name = response[i].pledges[j].name.length == 0 ? "Anonymous" : response[i].pledges[j].name;
+                    if(pledgeList.length < 5) {
                     pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
+                    }
                 }
             }
             result.push(<div key={response[i].shelter}>
