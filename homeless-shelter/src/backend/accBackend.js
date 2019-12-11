@@ -36,6 +36,7 @@ export const createAccount = async function(state) {
   });
 }
 
+
 export const getAccount = async function() {
   return await accRoot.get('/status', {
     headers: { Authorization : `Bearer ${localStorage.getItem("jwt")}`}

@@ -63,6 +63,9 @@ class ShelterFeed extends React.Component {
                 <CardBody>
                     <CardTitle><h5>{post.author}</h5></CardTitle>
                     <CardText><p>{post.post}</p></CardText>
+                    <Button color="info">
+                        <a class="twitter-share-button" href={"https://twitter.com/intent/tweet?text=" + post.post}>Post to Twitter</a>
+                    </Button>
                     {post.id == this.state.shelterId ? 
                     <Button onClick={this.handleDelete} id={obj} color="danger">Delete Post</Button> : null}
                 </CardBody>  
@@ -84,12 +87,15 @@ class ShelterFeed extends React.Component {
                 <div id="notLoggedIn">
                     <Card id="emptyCard">
                         <CardBody>
-                            <CardText><h3>You must be logged in to view the shelter feed</h3></CardText>
+                            <CardText>
+                                <h3>You must be logged in to view the shelter feed</h3>
+                                <br />
+                                <h5>Are you a registered shelter? <a href="../login">Log in</a> to view your timeline</h5>
+                                <h5>Not a registered shelter yet? <a href="../signup">Sign up</a> today!</h5>
+                            </CardText>
                         </CardBody>
                     </Card>
-                    <br />
-                    <h5>Are you a registered shelter? <a href="../login">Log in</a> to view your timeline</h5>
-                    <h5>Not a registered shelter yet? <a href="../signup">Sign up</a> today!</h5>
+                    
                 </div>  : 
                 <div id="container">
                     <Card>

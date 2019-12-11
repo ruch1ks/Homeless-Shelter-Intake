@@ -70,6 +70,12 @@
       "description": "Test message",
       "donations": [],
       "pledges": {}
+    },
+    "test": {
+      "donations": []
+    },
+    "undefined": {
+      "address": "hello"
     }
   }
 }

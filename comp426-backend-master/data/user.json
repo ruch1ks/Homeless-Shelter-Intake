@@ -137,5 +137,10 @@
         ]
       }
     }
+  },
+  "philtest@test": {
+    "com": {
+      "members": {}
+    }
   }
 }

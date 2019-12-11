@@ -1,7 +1,6 @@
 import React from 'react';
-
 import MyNavbar from './myNavbar.js';
-import {Card, CardBody, CardTitle, CardText, Row, Col} from 'reactstrap';
+import {Card, CardBody, CardTitle, CardText, Row, Col, Jumbotron, Button} from 'reactstrap';
 import './App.css';
 
 
@@ -15,37 +14,22 @@ class App extends React.Component {
     return (
       <div>
         <MyNavbar />
-        <div id="home">
-          <Card className="card">
-            <CardBody>
-              <CardTitle>
-                <h3>Guardian Angels</h3>
-              </CardTitle>
-              <CardText>
-                <p>Committed to providing a smooth and seamless experience for homeless shelters and those they serve</p>
-              </CardText>
-            </CardBody>
-          </Card>
-          <Row>
-            <Col sm={6}>
-              <Card className="card">
-                <CardBody>
-                  <CardTitle><h4>Are you affiliated with a shelter?</h4></CardTitle>
-                  <CardText><p><a href="/signup">Sign up</a> or <a href="/login">login</a> today!</p></CardText>
-                </CardBody>
-              </Card >
-            </Col>
-            <Col sm={6}>
-              <Card className="card">
-                <CardBody>
-                <CardTitle><h4>Interested in donating?</h4></CardTitle>
-                <CardText><p>Make your <a href='/all'>pledge</a> today!</p></CardText>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-        </div>
-      </div>);
+        
+      <Jumbotron className="jumbotron">
+        <h1 className="display-3">Guardian Angels</h1>
+        <br></br>
+        <p className="lead">Committed to providing a smooth and seamless experience for homeless shelters and those they serve.</p>
+        <hr className="my-3 text-info" />
+        <br></br>
+        <p className="display-5">Are you affiliated with a shelter? <a href="/signup">Sign up</a> or <a href="/login">login</a> today!</p>
+        <p>Interested in donating? Make your <a href='/all'>pledge</a> today!</p>
+        <br></br>
+        <p className="lead">
+          <Button color="primary"><a href="about">About Us</a></Button>
+        </p>
+      </Jumbotron>
+    </div>
+   );
   }
 };
   

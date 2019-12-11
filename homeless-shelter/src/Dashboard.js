@@ -1,6 +1,6 @@
 import React from 'react';
 import MyNavbar from './myNavbar.js';
-import {Card, CardBody, CardText, CardTitle, CardImg, Button} from 'reactstrap';
+import {Card, CardBody, CardText, CardTitle, Button, Container, Row, Col} from 'reactstrap';
 import {getAccount} from './backend/accBackend.js';
 import {calculateDonations} from './backend/userBackend.js';
 import './Dashboard.css';
@@ -52,56 +52,61 @@ class Dashboard extends React.Component {
                 {this.state.loggedIn ? <div id="notLoggedIn">
                     <Card id="emptyCard">
                         <CardBody>
-                            <CardText><h3>You must be logged in to view your dashboard</h3></CardText>
+                            <CardText>
+                                <h3>You must be logged in to view your dashboard</h3>
+                                <br></br>
+                                <br></br>
+                                <h5>Are you a registered shelter? <a href="../login">Log in</a> to view your dashboard</h5>
+                                <h5>Not a registered shelter yet? <a href="../signup">Sign up</a> today!</h5>
+                            </CardText>
                         </CardBody>
                     </Card>
                     <br />
-                    <h5>Are you a registered shelter? <a href="../login">Log in</a> to view your dashboard</h5>
-                    <h5>Not a registered shelter yet? <a href="../signup">Sign up</a> today!</h5>
                     </div> 
                     : 
                     <div id="dash">
-                    <Card id="infoCard">
-                        <CardBody>
-                            <CardImg></CardImg>
-                            <CardTitle><h4>{this.state.name}</h4></CardTitle>
-                            <CardText>
-                                <p><strong>Address:</strong> {this.state.address}</p>
-                                <p><strong>Phone Number:</strong> {this.state.phone}</p>
-                                <p><strong>About us:</strong> {this.state.description}</p>
-                            </CardText>
-                        </CardBody>
-                    </Card>
-                    <Card id="mapCard">
-                        <CardBody>
-                            <CardTitle><h4>Locate Us</h4></CardTitle>
-                            <iframe width="525" height="300" frameborder="0"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_ZOlJblaoiNo202aVhKRaoy9uVduIdbA&q=Durham+Rescue+Mission,Durham+NC" allowfullscreen>>
-                            </iframe>
-                        </CardBody>
-                    </Card>
-                    <Card id="memberCard">
-                        <CardBody>
-                            <CardTitle><h4>Manage Occupants</h4></CardTitle>
-                            <CardText>
-                                <Button id="register" color="primary"><a href='../registerMember'>Register New Member</a></Button>
-                                <Button color="info"><a href='../allMembers'>See All Members</a></Button>
-                            </CardText>
-                        </CardBody>
-                    </Card>
-                    <Card id="donationCard">
-                        <CardBody>
-                            <CardTitle><h4>Most Needed Donations</h4></CardTitle>
-                            <CardText>
-                                <div>
-                                    <ul>
-                                        {this.state.donationsNeeded}
-                                    </ul>
-                                </div>
-                            </CardText>
-                        </CardBody>
-                    </Card>
-                    
+                    <Container>
+                        <Row>
+                            <Card id="infoCard">
+                                <CardBody>
+                                    <CardTitle><h4>{this.state.name}</h4></CardTitle>
+                                    <CardText>
+                                        <p><strong>Address:</strong> {this.state.address}</p>
+                                        <p><strong>Phone Number:</strong> {this.state.phone}</p>
+                                        <p><strong>About us:</strong> {this.state.description}</p>
+                                    </CardText>
+                                </CardBody>
+                            </Card>
+                            <Card id="memberCard">
+                                <CardBody>
+                                    <CardTitle><h4>Manage Occupants</h4></CardTitle>
+                                    <CardText>
+                                        <br></br>
+                                        <Button id="register" color="primary"><a href='../registerMember'>Register New Member</a></Button>
+                                        <Button color="info"><a href='../allMembers'>See All Members</a></Button>
+                                    </CardText>
+                                </CardBody>
+                                </Card>
+                            
+                                <Card id="donationCard">
+                                    <CardBody>
+                                        <CardTitle><h4>Most Needed Donations</h4></CardTitle>
+                                        <CardText>
+                                            <div>
+                                                <ul>
+                                                    {this.state.donationsNeeded}
+                                                </ul>
+                                            </div>
+                                        </CardText>
+                                    </CardBody>
+                                </Card>
+                            
+                            
+                                
+                            
+                               
+                        </Row>
+                        </Container>
                     </div>}
             </div>
         )

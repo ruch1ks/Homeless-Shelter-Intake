@@ -12,6 +12,7 @@ import ShelterList from './ShelterList';
 import RegisterMember from './RegisterMember';
 import AllMembers from './AllMembers';
 import ShelterFeed from './ShelterFeed';
+import MyAccount from './MyAccount';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 
@@ -30,7 +31,7 @@ const routing = (
         <Route path = "/allMembers" component={AllMembers} />
         <Route path = "/feed" component={ShelterFeed} />
         <Route path = "/unregisterMember" component={UnregisterMember} />
-
+        <Route path = "/edit" component={MyAccount} />
       </div>
     </Router>
   )

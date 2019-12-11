@@ -39,9 +39,14 @@ class myNavbar extends React.Component {
     render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Home</NavbarBrand>
+        <Navbar className="navbar" color="light" light expand="md">
+          <NavbarBrand href="/">
+            Guardian Angels
+          </NavbarBrand>
             <Nav className="mr-auto" navbar>
+              <NavItem>
+                <NavLink href="/">Home</NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink href="/about/">About Us</NavLink>
               </NavItem>
@@ -54,23 +59,6 @@ class myNavbar extends React.Component {
               <NavItem>
                 <NavLink href="/feed/">Shelter Feed</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
               </Nav>
               <Nav className="float-right">
                 <div>
@@ -79,16 +67,22 @@ class myNavbar extends React.Component {
                 <NavItem id="login">
                   {localStorage.getItem("jwt") == null ?
                   <Link to='/login'>
-                    <Button id="login" color="primary">Login</Button>
+                    <Button className="login" color="primary">Login</Button>
                   </Link>
                   :
                   <Link to='/'>
-                    <Button onClick={this.handleClick} color="info">Log out</Button>
+                    <Button className="login" onClick={this.handleClick} color="info">Log out</Button>
                   </Link>
                   }
+                  {localStorage.getItem("jwt") == null ?
                   <Link to='/signup'>
                   <Button color="secondary">Sign Up</Button>{' '}
                   </Link>
+                  :
+                  <Link to='/dashboard'>
+                  <Button color="secondary">Dashboard</Button>{' '}
+                  </Link>
+                  }
                 </NavItem>
                 <NavItem>
                 </NavItem>

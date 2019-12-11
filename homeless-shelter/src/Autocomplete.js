@@ -69,10 +69,12 @@ class Autocomplete extends React.Component {
     async componentDidMount() {
         let response = await getAllMembers();
         let namesArr = [];
-
-        for(var obj in response.data.result) {
-            let person = response.data.result[obj];
-            namesArr.push(person.first + " " + person.last);
+        console.log(response);
+        if(typeof response.data.result !== 'undefined') {
+            for(let obj in response.data.result) {
+                let person = response.data.result[obj];
+                namesArr.push(person.first + " " + person.last);
+            }
         }
 
         this.setState({

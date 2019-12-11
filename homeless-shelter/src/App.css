@@ -6,3 +6,17 @@
 .card {
     margin-top: 3%;
 }
+
+
+.jumbotron {
+    background-image: url("./pictures/background-actual.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 10%;
+    color:white;
+}
+
+body {
+    background-color :#e9ecef;
+}
+

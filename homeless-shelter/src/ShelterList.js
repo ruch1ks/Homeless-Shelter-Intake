@@ -136,20 +136,22 @@ class ShelterList extends React.Component {
         for(let i = 0; i < response.length; i++) {
             let donationList = [];
             let pledgeList = [];    
-
-            for(let j = 0; j < response[i].donations.length; j++) {
-                donationList.push(<li>{response[i].donations[j]}</li>)
-            }       
-            for(let j = 0; j < response[i].pledges.length; j++) {
-
-                let items = [];
-                if(response[i].pledges[j].pledge != undefined) {
-                for(let k = 0; k < response[i].pledges[j].pledge.length; k++) {
-                    items.push(<li>{response[i].pledges[j].pledge[k]}</li>);
+            if(response[i].donations) {
+                for(let j = 0; j < response[i].donations.length; j++) {
+                    donationList.push(<li>{response[i].donations[j]}</li>)
                 }
-                let name = response[i].pledges[j].name.length == 0 ? "Anonymous" : response[i].pledges[j].name;
-                pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
             }
+            if(response[i].pledges)
+                for(let j = 0; j < response[i].pledges.length; j++) {
+
+                    let items = [];
+                    if(response[i].pledges[j].pledge != undefined) {
+                    for(let k = 0; k < response[i].pledges[j].pledge.length; k++) {
+                        items.push(<li>{response[i].pledges[j].pledge[k]}</li>);
+                    }
+                    let name = response[i].pledges[j].name.length == 0 ? "Anonymous" : response[i].pledges[j].name;
+                    pledgeList.push(<li>{name}: {response[i].pledges[j].message} <ul>{items}</ul></li>)
+                }
             }
             result.push(<div key={response[i].shelter}>
                 <Card>
@@ -182,11 +184,12 @@ class ShelterList extends React.Component {
     async componentDidMount() {
         let res = [];
 
-        await getPubAccs().then((value) => {
-            for(const shelter in value) {
-                res.push(value[shelter]);
-            }
-        });
+        let result = await getPubAccs();
+        for(const shelter in result) {
+            res.push(result[shelter]);
+        }
+        console.log(res);
+          
 
         this.setState({
             response : res

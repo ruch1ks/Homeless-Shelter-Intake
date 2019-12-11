@@ -25,12 +25,29 @@ export const accToPublic = async function(state) {
   });
 }
 
+export const editShelterData = async function(state) {
+  return await pubRoot.post('/shelters/' + state.name + "/", {
+    data: { 
+      "phone": state.phone,
+      "address": state.address,
+      "city" : state.city,
+      "state" : state.usState,
+      "description": state.description,
+    },
+  }).then(function (response) {
+  console.log(response);
+})
+.catch(function (error) {
+  console.log(error);
+});
+}
+
 export const getPubAccs = async function() {
     let data = "";
-    await pubRoot.get('/shelters')
+    return await pubRoot.get('/shelters')
     .then(function (response) {
         console.log(response.data.result);
-        data = response.data.result;
+        return response.data.result;
       })
       .catch(function (error) {
         console.log(error);
