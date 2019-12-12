@@ -4,6 +4,7 @@ import {Card, CardBody, CardText, CardTitle, Button, Container, Row, Col} from '
 import {getAccount} from './backend/accBackend.js';
 import {calculateDonations} from './backend/userBackend.js';
 import './Dashboard.css';
+import {getLocation, getWeather} from './backend/WeatherBackend.js';
 
 class Dashboard extends React.Component {
     constructor() {
@@ -15,7 +16,8 @@ class Dashboard extends React.Component {
             phone : '',
             address : '',
             description: '',
-            donationsNeeded: []
+            donationsNeeded: [],
+            weather: ''
         }
     }
 
@@ -34,15 +36,16 @@ class Dashboard extends React.Component {
         if(donations.length == 0) {
             donations.push(<p>You have no members currently registered</p>);
         }
-
+        let weatherRaw = await getWeather();
+        console.log(weatherRaw);
         this.setState({
             name: response.data.user.data.shelterName,
             phone: response.data.user.data.phone,
             address: response.data.user.data.address,
             description: response.data.user.data.description,
-            donationsNeeded: donations
+            donationsNeeded: donations,
+            weather: weatherRaw.data.properties.periods[0].temperature
         })
-
     }
 
     render() {
@@ -74,6 +77,7 @@ class Dashboard extends React.Component {
                                         <p><strong>Address:</strong> {this.state.address}</p>
                                         <p><strong>Phone Number:</strong> {this.state.phone}</p>
                                         <p><strong>About us:</strong> {this.state.description}</p>
+                                        <p><strong>Temperature: </strong> {this.state.weather} degrees</p>
                                     </CardText>
                                 </CardBody>
                             </Card>
@@ -100,11 +104,16 @@ class Dashboard extends React.Component {
                                         </CardText>
                                     </CardBody>
                                 </Card>
+                                {/* <Card>
+                                    <CardBody>
+                                        <CardTitle><h4>Current Weather</h4></CardTitle>
+                                        <CardText>
+                                            <p> Temperature: {this.state.weather}</p>
+                                        </CardText>
+                                    </CardBody>
+                                </Card> */}
                             
-                            
-                                
-                            
-                               
+                        
                         </Row>
                         </Container>
                     </div>}
