@@ -28,7 +28,6 @@ class Signup extends React.Component {
 
     handleChange(event) {
         let id = event.target.id;
-
         this.setState({
             login: (id == "username") ? event.target.value : this.state.login,
             pass: (id == "password") ? event.target.value : this.state.pass, 
@@ -40,6 +39,7 @@ class Signup extends React.Component {
             phone: (id == "phone") ? event.target.value : this.state.phone,
             description: (id == "description") ? event.target.value : this.state.description,
         });
+        console.log(this.state.phone);
     }
 
     validateAddress() {
@@ -110,7 +110,7 @@ class Signup extends React.Component {
                         </Row>
                         <FormGroup>
                             <Label for="phone">Phone Number</Label>
-                            <Input type="number" onChange={this.handleChange} name="Phone" id="phone" placeholder="ex. 123-456-7890"></Input>
+                            <Input type="text" onChange={this.handleChange} name="Phone" id="phone" placeholder="ex. 123-456-7890"></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label for="description">Description</Label>

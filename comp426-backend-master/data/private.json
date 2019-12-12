@@ -1,41 +1,24 @@
 {
   "posts": {
-    "2": [
-      {
-        "author": "Durham Rescue Shelter",
-        "id": "durhamrescue@gmail.com",
-        "post": "Celebrating our 13th anniversary! "
-      }
-    ],
     "3": [
       {
         "author": "Shelter z",
         "id": "zz",
-        "post": "testing some more"
-      },
-      {
-        "author": "Durham Rescue Shelter",
-        "id": "durhamrescue@gmail.com",
-        "post": "Does any have any spare bottled water? Were running low."
+        "post": "Wishing everyone a happy holidays!"
       }
     ],
     "6": [
       {
         "author": "Shelter zzz",
         "id": "zzz",
-        "post": "trying out the announcements!"
-      },
-      {
-        "author": "Durham Rescue Shelter",
-        "id": "durhamrescue@gmail.com",
-        "post": "Does any have any spare bottled water? Were running low."
+        "post": "Trying out the announcements!"
       }
     ],
-    "9": [
+    "12": [
       {
         "author": "Durham Rescue Shelter",
-        "id": "durhamrescue@gmail.com",
-        "post": "Does any have any spare bottled water? Were running low."
+        "id": "durhamrescue",
+        "post": "We are in urgent need of winter clothes this upcoming season"
       }
     ]
   }

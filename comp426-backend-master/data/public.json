@@ -2,11 +2,11 @@
   "shelters": {
     "Shelter bb ": {
       "shelter": "Shelter bb ",
-      "phone": "",
+      "phone": "592-491-9490",
       "address": "444 Shelter Rd",
       "city": "Raleigh",
       "state": "NC",
-      "description": "Test message",
+      "description": "Serving the area since 1990",
       "donations": [
         "Undergarments",
         "Bottled Water",
@@ -35,11 +35,11 @@
     },
     "Shelter z": {
       "shelter": "Shelter z",
-      "phone": "",
+      "phone": "585-391-5892",
       "address": "123 Shelter Rd",
       "city": "Cary",
       "state": "NC",
-      "description": "Test message",
+      "description": "We are currently accepting donations for the holiday season",
       "donations": [
         "Bottled Water",
         "Undergarments",
@@ -59,44 +59,48 @@
     },
     "Shelter zzz": {
       "shelter": "Shelter zzz",
-      "phone": "",
+      "phone": "453-645-2462",
       "address": "111 Shelter Rd",
       "city": "Durham",
       "state": "CA",
-      "description": "Test message",
+      "description": "Committed to serving California's homeless population",
       "donations": [
         "Bottled Water",
         "Undergarments"
       ],
-      "pledges": {}
-    },
-    "Shelter A": {
-      "shelter": "Shelter A",
-      "phone": "",
-      "address": "444 Shelter Rd. ",
-      "city": "Raleigh",
-      "state": "NC",
-      "description": "Test message",
-      "donations": [],
-      "pledges": {}
-    },
-    "test": {
-      "donations": []
-    },
-    "undefined": {
-      "address": "hello"
+      "pledges": [
+        {},
+        {
+          "name": "",
+          "message": "",
+          "pledge": [
+            "Socks"
+          ]
+        }
+      ]
     },
     "Durham Rescue Shelter": {
       "shelter": "Durham Rescue Shelter",
-      "phone": "",
-      "address": "123 Shelter Road",
+      "phone": "393-292-1492",
+      "address": "123 Shelter Rd",
       "city": "Durham",
       "state": "NC",
-      "description": "Durham Rescue Shelter. Serving the area since 2006.",
+      "description": "Committed to serving the area since 2003. ",
       "donations": [
-        "Bottled Water"
+        "Undergarments",
+        "Gift Cards (for chain stores)",
+        "Socks"
       ],
-      "pledges": {}
+      "pledges": [
+        {},
+        {
+          "name": "",
+          "message": "Happy holidays!",
+          "pledge": [
+            "Warm Clothing (coats, gloves, scarves, etc)"
+          ]
+        }
+      ]
     }
   }
 }

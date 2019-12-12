@@ -162,7 +162,7 @@ class ShelterList extends React.Component {
                         <CardText>
                             <p>Address: {response[i].address}</p>
                             <p>Phone: {response[i].phone}</p>
-                            <p>About: {response[i].about}</p>
+                            <p>About: {response[i].description}</p>
                             <h6>Most Needed Donations:</h6>
                             <ul>{donationList}</ul>
                             <Card>

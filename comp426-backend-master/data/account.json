@@ -1,183 +1,39 @@
 {
   "users": {
-    "1": {
-      "passwordHash": "$2a$10$yEvEXu8q1Z3upZCFcgzmR.zVJwhAIbVNZYf7HwuWFrtpbM59E/zg2",
-      "data": {
-        "shelterName": "1",
-        "phone": "1",
-        "address": "1",
-        "description": "1"
-      }
-    },
-    "9": {
-      "passwordHash": "$2a$10$WmrQlSRrgwskjYdrvBTrmulQxPQeWc5qx5HJN6axfXW6JIDmWwlba",
-      "data": {
-        "shelterName": "99",
-        "phone": "9",
-        "address": "9",
-        "description": "9"
-      }
-    },
-    "test": {
-      "passwordHash": "$2a$10$dadscJsh2jB1f4AJWX4ClOC1kg38KJ7hNqZg2hix81wwL.as3utAy",
-      "data": {
-        "phone": "phoneNum",
-        "address": "123 Durham"
-      }
-    },
-    "booty": {
-      "passwordHash": "$2a$10$H/jKQEz280HDHldpopWbY.lk8cVryBgIjaWJeivue95WV8YeMo6mi",
-      "data": {
-        "phone": "phoneNum",
-        "address": "123 Durham"
-      }
-    },
-    "abcde": {
-      "passwordHash": "$2a$10$bew30zSSve/PMTKe8fvvzu/yNXkM0WT1.osHXbU/VldjNXS8oJMba",
-      "data": {
-        "shelterName": "Test",
-        "phone": "(123) 456-7890",
-        "address": "111 Test Road",
-        "description": "I am a test account"
-      }
-    },
-    "hiiii": {
-      "passwordHash": "$2a$10$nCEMGIHrcmADMk5zi8.V1uL..qB4PjAI0wmtQHkjNQc9VYMsKiq4.",
-      "data": {
-        "shelterName": "Testtest",
-        "phone": "123123123",
-        "address": "123123",
-        "description": "i am a test"
-      }
-    },
-    "aaa": {
-      "passwordHash": "$2a$10$gqrszv/S/ktSW22cvLKvw./OuzlrTgrTYoq/fb3yE3zmZ48stEuLm",
-      "data": {
-        "shelterName": "aaa",
-        "phone": "aaaaaaaaa",
-        "address": "aaaaaa",
-        "description": "test 3"
-      }
-    },
-    "shelter1": {
-      "passwordHash": "$2a$10$kuJdTP5TIeMLXy2GU3swb.pDn8OQjF5/0CBATpGMO2VTpdYlQ.5ba",
-      "data": {
-        "shelterName": "Shelter 1",
-        "phone": "(123) 123-1233",
-        "address": "123 shelter road",
-        "description": "This is another test"
-      }
-    },
-    "test1": {
-      "passwordHash": "$2a$10$ySem1YhoG50G/xXh/RYXQO7ir6XkFXqY70DVCImxDznXi3Isgr1iq",
-      "data": {
-        "shelterName": "test",
-        "phone": "test",
-        "address": "test",
-        "description": "test"
-      }
-    },
-    "test2": {
-      "passwordHash": "$2a$10$25v4//e15bCw2Ah.1wn48uj0RlJN2RqIZhriufY4GkpQqfLiSi2Fm",
-      "data": {
-        "shelterName": "test2",
-        "phone": "test2",
-        "address": "test2",
-        "description": "test2"
-      }
-    },
-    "philtest@test": {
-      "com": {
-        "passwordHash": "$2a$10$Wol0YFRQT.2fMMqxYv3nseAMVDr8gGLhRSlIrxkXBhVsmiBivlCHi",
-        "data": {
-          "shelterName": "test",
-          "phone": "test",
-          "address": "test",
-          "description": "test"
-        }
-      }
-    },
-    "test4": {
-      "passwordHash": "$2a$10$e5amVCktgVc9CCH7BQ9ekepxnWZ0aU9ma5ZscPyrjtM60c86CCfzm",
-      "data": {
-        "shelterName": "4",
-        "phone": "4",
-        "address": "4",
-        "description": "4"
-      }
-    },
-    "aa": {
-      "passwordHash": "$2a$10$J7g6tjTrx2sPWsLdMaeSbeQrBFXfw1EtCZaRt3v1uKvCiyigx.WcG",
-      "data": {
-        "shelterName": "aa",
-        "phone": "aa",
-        "address": "aa",
-        "description": "aa"
-      }
-    },
-    "shelter2": {
-      "passwordHash": "$2a$10$7v7Yf8Hy68by0T3H8qinSen8O8rDIJYBl7AYr13/tinA02/b7BfDW",
-      "data": {
-        "shelterName": "shelter 2",
-        "phone": "shelter 2",
-        "address": "shetler 2",
-        "description": "shelter 2"
-      }
-    },
-    "abc": {
-      "passwordHash": "$2a$10$s7vh9Ckmvy9a6NfG1aG17eD9XWwGwoC4ar2MKookPb8ksJXU4GLBS",
-      "data": {
-        "shelterName": "Shelter Abc",
-        "phone": "",
-        "address": "123 Shelter Rd",
-        "description": "This is a test"
-      }
-    },
     "bb": {
       "passwordHash": "$2a$10$jkELaPU6TEMv8VvVANsmSOSnJg/6iGgWoRi9fzHuE/N.DshOof9MK",
       "data": {
-        "shelterName": "Shelter bb ",
-        "phone": "",
+        "shelterName": "Shelter B ",
+        "phone": "592-491-9490",
         "address": "444 Shelter Rd",
-        "description": "Test message"
+        "description": "Serving the area since 1990"
       }
     },
     "zz": {
       "passwordHash": "$2a$10$AbWAULMRfMKe4ai/CnUzjuxh2GFJxKOkDQkYKlDF/dwKwNLutPdOa",
       "data": {
         "shelterName": "Shelter z",
-        "phone": "",
+        "phone": "585-391-5892",
         "address": "123 Shelter Rd",
-        "description": "Test message"
+        "description": "We are currently accepting donations for the holiday season"
       }
     },
     "zzz": {
       "passwordHash": "$2a$10$2A2vVbitblqgFz9wW4TCsOxJq3jy2BC.B77Iz2z2H7Km9zdj/FRsC",
       "data": {
         "shelterName": "Shelter zzz",
-        "phone": "",
+        "phone": "453-645-2462",
         "address": "111 Shelter Rd",
-        "description": "Test message"
+        "description": "Committed to serving California's homeless population"
       }
     },
-    "testa": {
-      "passwordHash": "$2a$10$5c3o8rO8sF.3CsuSqL0TGe52viaRbVWaF.QXHwRYemKeK.ob9iOgG",
+    "durhamrescue": {
+      "passwordHash": "$2a$10$1FcVg4L3lJGC8Eo5/Fgi0eFyR6ONnD9SJa3ccS/FnkOadHq6RfGZq",
       "data": {
-        "shelterName": "Shelter A",
-        "phone": "",
-        "address": "444 Shelter Rd. ",
-        "description": "Test message"
-      }
-    },
-    "durhamrescue@gmail": {
-      "com": {
-        "passwordHash": "$2a$10$b6vDvwI5MDbecXec25ygJeszzMkwZkqeDSlqkCHjv.kZoqkBgE94G",
-        "data": {
-          "shelterName": "Durham Rescue Shelter",
-          "phone": "",
-          "address": "123 Shelter Road",
-          "description": "Durham Rescue Shelter. Serving the area since 2006."
-        }
+        "shelterName": "Durham Rescue Shelter",
+        "phone": "393-292-1492",
+        "address": "123 Shelter Rd",
+        "description": "Committed to serving the area since 2003. "
       }
     }
   }

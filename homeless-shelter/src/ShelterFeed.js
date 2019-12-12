@@ -64,7 +64,7 @@ class ShelterFeed extends React.Component {
                     <CardTitle><h5>{post.author}</h5></CardTitle>
                     <CardText><p>{post.post}</p></CardText>
                     <Button color="info">
-                        <a class="twitter-share-button" href={"https://twitter.com/intent/tweet?text=" + post.post}>Post to Twitter</a>
+                        <a class="twitter-share-button" href={"https://twitter.com/intent/tweet?text=" + post.post}>Share on Twitter</a>
                     </Button>
                     {post.id == this.state.shelterId ? 
                     <Button onClick={this.handleDelete} id={obj} color="danger">Delete Post</Button> : null}
